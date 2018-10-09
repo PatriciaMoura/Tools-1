@@ -20,7 +20,8 @@
         <activity android:name=".Calculadora" />
         <activity android:name=".IMC" />
         <activity android:name=".SpeechToText" />
-        <activity android:name=".Calcular_Media"></activity>
+        <activity android:name=".Calcular_Media" />
+        <activity android:name=".Abstrata"></activity>
     </application>
 
 </manifest>
