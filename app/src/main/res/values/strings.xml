@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tools</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="Peso">Peso</string>
+    <string name="Altura">Altura</string>
+    <string name="Calcular_IMC">Calcular IMC</string>
+
+</resources>
