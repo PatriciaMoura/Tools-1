@@ -5,5 +5,6 @@
     <string name="Peso">Peso</string>
     <string name="Altura">Altura</string>
     <string name="Calcular_IMC">Calcular IMC</string>
+    <string name="title_activity_ficha__medica">Ficha_Medica</string>
 
 </resources>

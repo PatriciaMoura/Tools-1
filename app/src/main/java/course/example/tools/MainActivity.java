@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+
 public class MainActivity extends ListActivity {
 
     private static final String[] nomes = new String[]{"Cadastro", "IMC", "SpeechToText", "Calculadora", "Sair"};
