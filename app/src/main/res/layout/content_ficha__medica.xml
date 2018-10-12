@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Ficha_Medica"
+    tools:context=".Ficha_Medica_Controller"
     tools:showIn="@layout/activity_ficha__medica">
 
 
@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastro de Paciente"
+                android:text="Ficha Médica"
                 android:typeface="sans"
                 android:textSize="15sp"
                 android:gravity="center"/>
@@ -48,7 +48,7 @@
                 android:layout_weight="3"/>
 
             <EditText
-                android:id="@+id/edtPacienteNome"
+                android:id="@+id/edtNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -71,7 +71,7 @@
                 android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edtPacienteData"
+                android:id="@+id/edtDatanasc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -94,7 +94,7 @@
                 android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edtPacientePeso"
+                android:id="@+id/edtPeso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -117,7 +117,7 @@
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtAlturaPaciente"
+                android:id="@+id/edtAltura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -125,51 +125,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hospital:"
-                android:typeface="sans"
-                android:textSize="17sp"
-                android:layout_weight="2"/>
-
-            <Spinner
-                android:id="@+id/spnPacienteHospital"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="date"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Leito:"
-                android:typeface="sans"
-                android:textSize="17sp"
-                android:layout_weight="2"/>
-
-            <Spinner
-                android:id="@+id/spnPacienteLeito"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="date"/>
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -186,7 +141,7 @@
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtPacienteCPF"
+                android:id="@+id/edt_CPF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -209,7 +164,7 @@
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtPacienteRG"
+                android:id="@+id/edtRG"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -232,7 +187,7 @@
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtPacienteTelefone"
+                android:id="@+id/edtTelefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -249,13 +204,59 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sobrenome:"
+                android:text="Contato de Emergência:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtPacienteSobrenome"
+                android:id="@+id/edtContatoEmergencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo Sanguíneo:"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtTipoSangue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alergia:"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtAlergia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

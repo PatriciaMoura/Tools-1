@@ -23,7 +23,7 @@
         <activity android:name=".Calcular_Media" />
         <activity android:name=".Abstrata" />
         <activity
-            android:name=".Ficha_Medica"
+            android:name=".Ficha_Medica_Controller"
             android:label="@string/title_activity_ficha__medica"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

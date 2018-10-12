@@ -60,13 +60,7 @@ public class Pessoa {
     public void  setAlergia (String alergia) { this.alergia = alergia;}
 
     public Date getDatanasc () { return datanasc; }
-    public void setDatanasc (Date datanasc) {this.datanasc = datanasc}
-
-
-
-
-
-
+    public void setDatanasc (Date datanasc) {this.datanasc = datanasc;}
 
 
 
