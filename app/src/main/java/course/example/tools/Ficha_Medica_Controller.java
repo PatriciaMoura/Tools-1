@@ -17,7 +17,7 @@ public class Ficha_Medica_Controller extends BaseController<model.Ficha_Medica> 
 
 
    public boolean insert (Ficha_Medica_Controller ficha_medica){
-        boolean isCreate = db.insert(model.Ficha_Medica.TABLE, null, convertToContentValue(ficha_medica)) > 0;
+        boolean isCreate = db.insert(model.Ficha_Medica.TABLE, null, convertToContentValue (ficha_medica)) > 0;
         return isCreate;
    }
 

@@ -1,44 +1,75 @@
 package course.example.tools;
 
-import android.app.ListActivity;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Button;
 
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String[] nomes = new String[]{"Cadastro", "IMC", "SpeechToText", "Calculadora", "Sair"};
+    Intent intent;
+    Button btnFichaMedica, btnIMC, btnSpeech, btnCalculadora, btnCalcularMedia;
+
+
+    protected void onCreated (Bundle saveInstanceState){
+        super.onCreate(saveInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnFichaMedica = (Button) findViewById(R.id.btnFichaMedica);
+        btnFichaMedica.setOnClickListener(this);
+
+        btnIMC = (Button) findViewById(R.id.btnIMC);
+        btnIMC.setOnClickListener(this);
+
+        btnSpeech = (Button) findViewById(R.id.btnSpeech);
+        btnSpeech.setOnClickListener(this);
+
+        btnCalculadora = (Button) findViewById(R.id.btnCalculadora);
+        btnCalculadora.setOnClickListener(this);
+
+        btnCalcularMedia = (Button) findViewById(R.id.btnCalcularMedia);
+        btnCalcularMedia.setOnClickListener(this);
+    }
+
+
 
         @Override
-        public void onCreated(Bundle icicle){
-            super.onCreate(icicle);
-            this.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomes));
-        }
+                public void onClick (View view){
 
-        @Override
-                protected void onListItemClick (ListView l, View v, int position, long id){
-            switch (position)
-            {
-                case 0:
-                    startActivity(new Intent(this, Cadastro.class));
+            switch (view.getId()){
+
+                case R.id.btnFichaMedica:
+                    intent = new Intent(MainActivity.this, Ficha_Medica_Controller.class);
+                    startActivity(intent);
                     break;
-                case 1:
-                    startActivity(new Intent(this, IMC.class));
+
+                case R.id.btnIMC:
+                    intent = new Intent(MainActivity.this, IMC.class);
+                    startActivity(intent);
                     break;
-                case 2:
-                    startActivity(new Intent(this, SpeechToText.class));
+
+                case R.id.btnSpeech:
+                    intent = new Intent(MainActivity.this, SpeechToText.class);
+                    startActivity(intent);
                     break;
-                case 3:
-                    startActivity(new Intent(this, Calculadora.class));
-                case 4:
-                    startActivity(new Intent(this, Calcular_Media.class));
-                default:
-                finish();
+
+                case R.id.btnCalculadora:
+                    intent = new Intent(MainActivity.this, Calculadora.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.btnCalcularMedia:
+                    intent = new Intent(MainActivity.this, Calcular_Media.class);
+                    startActivity(intent);
+                    break;
             }
         }
-    }
+
+        @Override
+    protected void onDestroy () {super.onDestroy();
+}
+
 }

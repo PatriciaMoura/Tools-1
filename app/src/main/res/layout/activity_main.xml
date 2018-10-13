@@ -7,24 +7,47 @@
     tools:context=".MainActivity"
     android:orientation="horizontal">
 
-    <Button
+
+
+
+
+     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastro"/>
+        android:text="Ficha Médica"
+        android:id="@+id/btnFichaMedica" />
 
     <Button
+        android:id="@+id/btnIMC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IMC"/>
+        android:text="IMC"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="69dp" />
 
     <Button
+        android:id="@+id/btnSpeech"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SpeechToText"/>
+        android:text="SpeechToText"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="140dp" />
 
     <Button
+        android:id="@+id/btnCalculadora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculadora"/>
+        android:text="Calculadora"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+    <Button
+        android:id="@+id/btnCalcularMedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular Média"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="277dp" />
+
 
 </android.support.constraint.ConstraintLayout>
