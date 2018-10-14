@@ -29,6 +29,13 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="71dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SpeechToText"
+            android:textSize="25dp"
+            android:textStyle="normal" />
+
         <ImageButton
             android:id="@+id/btnSpeak"
             android:layout_width="wrap_content"

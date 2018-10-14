@@ -6,62 +6,73 @@
     android:layout_height="wrap_content"
     tools:context=".Calcular_Media">
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:id="@+id/activity_main1">
+
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="374dp"
             android:layout_height="wrap_content"
-            android:text="nota1" />
+            android:text="Nota1"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtNota1"
-            android:layout_width="110dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="nota2" />
+            android:text="Nota2"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/txtNota2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textSize="20sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="nota3" />
+            android:text="Nota3"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/txtNota3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textSize="20sp"/>
 
         <Button
             android:id="@+id/btnCalcular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="calcular" />
+            android:text="calcular"
+            android:textSize="20sp"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="media" />
+            android:layout_height="56dp"
+            android:text="Média"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtMediaFinal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="nota_final" />
+            android:layout_height="64dp"
+            android:text="Nota Final"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
