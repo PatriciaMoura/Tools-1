@@ -44,9 +44,7 @@ public class SpeechToText extends AppCompatActivity {
 
         }
 
-        /**
-         * Showing google speech input dialog
-         * */
+
         private void promptSpeechInput() {
             Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
             intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -63,9 +61,7 @@ public class SpeechToText extends AppCompatActivity {
             }
         }
 
-        /**
-         * Receiving speech input
-         * */
+
         @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);

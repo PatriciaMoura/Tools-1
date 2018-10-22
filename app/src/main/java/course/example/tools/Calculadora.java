@@ -31,25 +31,21 @@ public class Calculadora extends AppCompatActivity {
         igual = (Button)findViewById(R.id.igual);
         limpar = (Button)findViewById(R.id.limpar);
 
-        //Variáveis que serão
-        //usadas nas operações
+
         operacao = 0; //Informa qual operação será executada
         numero1 = 0.0; //Primeiro número digitado
         numero2 = 0.0; //Segundo número digitado após clicar na operação desejada
         resultado = 0.0; //Resultado que será exibido no campo
 
-        //Iniciar o app com os botões de operação
-        //desabilitados
+        //Iniciar o app com os botões de operação desabilitados
+
         somar.setEnabled(false);
         subtrair.setEnabled(false);
         multiplicar.setEnabled(false);
         dividir.setEnabled(false);
         igual.setEnabled(false);
 
-        /**
-         * Se o campo estiver sem nada digitado
-         * desabilita os botões.
-         */
+
         campo.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -101,13 +97,7 @@ public class Calculadora extends AppCompatActivity {
             }
         });
 
-        /**
-         * Listener que fica esperando apertar o botão
-         * para efetuar a subtração. Ele guarda o primeiro
-         * número digitado, diz qual a operação que será
-         * executada (2 = subtração) ao clicar no botão igual
-         * e limpa o campo para digitar o segundo número.
-         */
+
         subtrair.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -118,13 +108,7 @@ public class Calculadora extends AppCompatActivity {
             }
         });
 
-        /**
-         * Listener que fica esperando apertar o botão
-         * para efetuar a multiplicação. Ele guarda o primeiro
-         * número digitado, diz qual a operação que será
-         * executada (3 = multiplicação) ao clicar no botão igual
-         * e limpa o campo para digitar o segundo número.
-         */
+
         multiplicar.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -135,13 +119,7 @@ public class Calculadora extends AppCompatActivity {
             }
         });
 
-        /**
-         * Listener que fica esperando apertar o botão
-         * para efetuar a divisão. Ele guarda o primeiro
-         * número digitado, diz qual a operação que será
-         * executada (4 = divisão) ao clicar no botão igual
-         * e limpa o campo para digitar o segundo número.
-         */
+
         dividir.setOnClickListener(new View.OnClickListener() {
 
             @Override

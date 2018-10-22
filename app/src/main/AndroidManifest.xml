@@ -24,7 +24,8 @@
         <activity
             android:name=".Ficha_Medica_Controller"
             android:label="@string/title_activity_ficha__medica"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Cadastro_Livro"></activity>
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ficha Médica"
+         android:background="#a1a0a0"
         android:id="@+id/btnFichaMedica" />
 
     <Button
@@ -20,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="IMC"
+        android:background="#a1a0a0"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="69dp" />
 
@@ -28,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SpeechToText"
+        android:background="#a1a0a0"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="140dp" />
 
@@ -36,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calculadora"
+        android:background="#a1a0a0"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="208dp" />
 
@@ -44,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calcular Média"
+        android:background="#a1a0a0"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="277dp" />
 

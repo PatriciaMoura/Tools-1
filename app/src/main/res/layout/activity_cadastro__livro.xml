@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cadastro_Livro"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:text="Título"
+        android:textSize="18sp"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/Edit_Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Título"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp" />
+
+    <TextView
+        android:id="@+id/Autor"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:text="Autor"
+        android:textSize="18sp"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <EditText
+        android:id="@+id/Edit_Autor"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Autor"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <TextView
+        android:id="@+id/Editora"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="Editora"
+        android:textSize="18sp"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+    <EditText
+        android:id="@+id/Edit_Editora"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Editora"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="285dp" />
+
+    <Button
+        android:id="@+id/Cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="382dp" />
+
+
+</android.support.constraint.ConstraintLayout>

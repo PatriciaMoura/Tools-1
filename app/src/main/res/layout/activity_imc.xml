@@ -16,8 +16,7 @@ android:orientation="horizontal"/>
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#ffffff"
-        android:id="@+id/activity_main1">
+        android:background="#ffffff">
 
 
         <TextView
@@ -60,7 +59,7 @@ android:orientation="horizontal"/>
             android:id="@+id/btCalcular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#8ed5f9"
+            android:background="#a1a0a0"
             android:text="@string/Calcular_IMC" />
 
         <TextView
