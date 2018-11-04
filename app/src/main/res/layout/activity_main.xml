@@ -8,20 +8,19 @@
     android:orientation="horizontal">
 
 
-
-     <Button
+    <Button
+        android:id="@+id/btnFichaMedica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ficha Médica"
-         android:background="#a1a0a0"
-        android:id="@+id/btnFichaMedica" />
+        android:background="@color/colorAccent"
+        android:text="Ficha Médica" />
 
     <Button
         android:id="@+id/btnIMC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:text="IMC"
-        android:background="#a1a0a0"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="69dp" />
 
@@ -29,8 +28,8 @@
         android:id="@+id/btnSpeech"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:text="SpeechToText"
-        android:background="#a1a0a0"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="140dp" />
 
@@ -38,19 +37,28 @@
         android:id="@+id/btnCalculadora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:text="Calculadora"
-        android:background="#a1a0a0"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="208dp" />
+
 
     <Button
         android:id="@+id/btnCalcularMedia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:text="Calcular Média"
-        android:background="#a1a0a0"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="277dp" />
+        tools:layout_editor_absoluteY="282dp" />
 
+    <Button
+        android:id="@+id/btnCadastrarLivros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Cadastro de Livros"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="355dp" />
 
 </android.support.constraint.ConstraintLayout>
