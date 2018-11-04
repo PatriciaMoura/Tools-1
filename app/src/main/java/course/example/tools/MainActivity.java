@@ -11,7 +11,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Intent intent;
-    Button btnFichaMedica, btnIMC, btnSpeech, btnCalculadora, btnCalcularMedia;
+    Button btnFichaMedica, btnIMC, btnSpeech, btnCalculadora, btnCalcularMedia, btnCadastrarLivros;
 
 
     protected void onCreated (Bundle saveInstanceState){
@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnCalcularMedia = (Button) findViewById(R.id.btnCalcularMedia);
         btnCalcularMedia.setOnClickListener(this);
+
+        btnCadastrarLivros = (Button) findViewById(R.id.btnCadastrarLivros);
+        btnCadastrarLivros.setOnClickListener(this);
     }
 
 
@@ -65,6 +68,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent = new Intent(MainActivity.this, Calcular_Media.class);
                     startActivity(intent);
                     break;
+
+                case R.id.btnCadastrarLivros:
+                    intent = new Intent(MainActivity.this, Cadastro_Livro.class);
+                    startActivity(intent);
             }
         }
 

@@ -17,7 +17,7 @@ public class Pessoa {
 
     // Criando tabela
 
-    public static final String SQL_PESSOA = COLUMN_ID    + " INTEGER PRIMEARY KEY AUTOINVREMENT, "
+    public static final String SQL_PESSOA = COLUMN_ID    + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_NOME                + " TEXT,"
             + COLUMN_RG                  + " INTEGER,"
             + COLUMN_CPF                 + " TEXT, "
