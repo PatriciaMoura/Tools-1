@@ -10,7 +10,7 @@ import model.Ficha_Medica;
 //criado em 12/10/2018
 
 
-public class Ficha_Medica_Controller extends BaseController<model.Ficha_Medica> {
+public class Ficha_Medica_Controller extends BaseController <model.Ficha_Medica> {
     public Ficha_Medica_Controller(Context context) {
         super(context);
     } //integração com o banco
