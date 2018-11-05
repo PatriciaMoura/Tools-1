@@ -59,6 +59,7 @@ android:orientation="horizontal"/>
             android:id="@+id/btCalcular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:background="#a1a0a0"
             android:text="@string/Calcular_IMC" />
 
@@ -68,9 +69,11 @@ android:orientation="horizontal"/>
             android:id="@+id/teste" />
 
         <TextView
+            android:id="@+id/resultado"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/resultado"/>
+            android:hint="Resultado"
+            android:textSize="18sp"
+            android:layout_height="51dp" />
 
 </LinearLayout>
 

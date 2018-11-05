@@ -17,8 +17,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import View.Cadastro.FichaMedicaCadastro;
 import course.example.tools.Ficha_Medica_Controller;
-import course.example.tools.R;
 import model.Ficha_Medica;
 
 public class FichaMedica_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
@@ -26,7 +26,7 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
     private ListView listView;
     private EditText editText;
     ArrayAdapter<String> adapter;
-    List<Ficha> FichaMedicaList;
+    List<Ficha_Medica> FichaMedicaList; // é a classe model
     private List<String> FichaMedicaListNome = new ArrayList<String>();
     private Ficha_Medica_Controller fichaMedicaController;
     private ImageView imageView;
@@ -67,24 +67,24 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
     @Override
     public void onClick(View view) {
 
-        FichaMedica fichaMedica  = new FichaMedica (this);
+        Ficha_Medica fichaMedica  = new Ficha_Medica (this);
     }
 
     public void atualizarRegistros() {
 
-        pacienteListNome.clear();
+        FichaMedicaListNome.clear();
 
-        pacienteList = pacienteController.getAll();
+        FichaMedicaList = fichaMedicaController.getAll();
 
-        for (Paciente paciente : pacienteList)
-            pacienteListNome.add(paciente.getNome() + " " + paciente.getSobrenome() + " - CPF: " + paciente.getCpf());
+        for (Ficha_Medica fichaMedica : FichaMedicaList)
+            FichaMedicaList.add(fichaMedica.getNome() + " " + fichaMedica.getRg() + " - CPF: " + fichaMedica.getCpf());
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pacienteListNome);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, FichaMedicaListNome);
         listView.setAdapter(adapter);
 
     }
 
-    public void alertDialog(final Paciente paciente){
+    public void alertDialog(final Ficha_Medica fichaMedica){
 
         final CharSequence[] itens = {"editar","deletar"};
 
@@ -96,19 +96,19 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
                         if (item == 0){
                             //EDITAR
 
-                            PacienteCadastro pacienteCadastro = new PacienteCadastro(PacienteView.this);
-                            pacienteCadastro.loadPaciente(paciente);
+                            FichaMedicaCadastro fichaMedicaCadastro = new FichaMedicaCadastro(FichaMedica_View.this);
+                            FichaMedicaCadastro.loadFichaMedica(fichaMedica);
 
                         }else if (item == 1) {
                             //DELETAR
-                            boolean isDeletouComSucesso = pacienteController.delete(paciente.getId());
+                            boolean isDeletouComSucesso = fichaMedicaController.delete(fichaMedica.getId());
 
                             if (isDeletouComSucesso){
-                                Toast.makeText(PacienteView.this, "Contato deletado.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(FichaMedica_View.this, "Deletado.", Toast.LENGTH_SHORT).show();
                                 atualizarRegistros();
 
                             }else{
-                                Toast.makeText(PacienteView.this, "Erro ao deletar o contato.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(FichaMedica_View.this, "Erro ao deletar.", Toast.LENGTH_SHORT).show();
                             }
                         }
                         dialogInterface.dismiss();
@@ -121,10 +121,9 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Paciente paciente = pacienteList.get(i);
-        alertDialog(paciente);
+        Ficha_Medica fichaMedica = FichaMedicaList.get(i);
+        alertDialog(fichaMedica);
 
     }
-
 
 }

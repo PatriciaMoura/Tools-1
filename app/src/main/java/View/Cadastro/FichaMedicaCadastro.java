@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+
+import course.example.tools.R;
 import model.DateUtil;
 import model.Ficha_Medica;
 
@@ -28,6 +30,7 @@ public class FichaMedicaCadastro implements DialogInterface.OnShowListener, View
     private AlertDialog dialog;
     private EditText editTextNome, editTextRG, editTextCPF, editTextAltura, editTextPeso, editTextContatoEmergencia, editTextTipoSangue, editTextAlergia;
     private EditText editTextData, editTextTelefone;
+    private Ficha_Medica fichaMedica; //Ficha_Medica model
 
     private List<String> listaFichaMedica = new ArrayList<String>();
 
@@ -42,16 +45,16 @@ public class FichaMedicaCadastro implements DialogInterface.OnShowListener, View
 
         //CRIA O LAYOUT COMO ALERTDIALOG
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.ficha_medica, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.content_ficha__medica, null);
         builder.setView(view);
 
         //ATRIBUI AS VARIVEIS AOS ITENS DO LAYOUT
         editTextNome = (EditText)view.findViewById(R.id.edtNome);
-        editTextRG = (EditText) view.findViewById(R.id.edtDatanasc);
-        editTextCPF = (EditText) view.findViewById(R.id.edtPeso);
+        editTextRG = (EditText) view.findViewById(R.id.edtRG);
+        editTextCPF = (EditText) view.findViewById(R.id.edt_CPF);
         editTextAltura = (EditText) view.findViewById(R.id.edtAltura);
-        editTextPeso = (EditText) view.findViewById(R.id.edt_CPF);
-        editTextData = (EditText) view.findViewById(R.id.edtRG);
+        editTextPeso = (EditText) view.findViewById(R.id.edtPeso);
+        editTextData = (EditText) view.findViewById(R.id.edtDatanasc);
         editTextTelefone = (EditText) view.findViewById(R.id.edtTelefone);
         editTextContatoEmergencia = (EditText) view.findViewById(R.id.edtContatoEmergencia);
         editTextTipoSangue = (EditText) view.findViewById(R.id.edtTipoSangue);
@@ -67,19 +70,19 @@ public class FichaMedicaCadastro implements DialogInterface.OnShowListener, View
 
     }
 
-    public void loadFichaMedica (FichaMedica fichaMedica){
+    public void loadFichaMedica (Ficha_Medica fichaMedica){
 
         this.fichaMedica = fichaMedica;
 
         editTextNome.setText(fichaMedica.getNome());
         editTextRG.setText(String.valueOf(fichaMedica.getRg()));
-        editTextCPF.setText(paciente.getCpf());
+        editTextCPF.setText(fichaMedica.getCpf());
         editTextAltura.setText(String.valueOf(fichaMedica.getAltura()));
         editTextPeso.setText(String.valueOf(fichaMedica.getPeso()));
-        editTextData.setText((DateUtil.dateToString(fichaMedica.getData())));
-        editTextTelefone.setText(String.valueOf(fichaMedica.getTelefone()));
-        editTextContatoEmergencia.setText(fichaMedica.getSobrenome());
-        editTextTipoSangue.setText(fichaMedica.getTipoSangue());
+        editTextData.setText((DateUtil.dateToString(fichaMedica.getDatanasc())));
+        editTextTelefone.setText(String.valueOf(fichaMedica.gettelefone()));
+        editTextContatoEmergencia.setText(fichaMedica.getContatoemergencia());
+        editTextTipoSangue.setText(fichaMedica.getTiposangue());
         editTextAlergia.setText(fichaMedica.getAlergia());
     }
 
@@ -138,54 +141,61 @@ public class FichaMedicaCadastro implements DialogInterface.OnShowListener, View
         if (fichaMedicaContatoEmergencia.length() == 0)
             editTextContatoEmergencia.setError("Digite o Contato de Emergência!");
         if (fichaMedicaTipoSangue.length() == 0)
-            editTextTipoSangue.setError("Digite o Seu Sobrenome!");
+            editTextTipoSangue.setError("Digite o Seu Tipo de Sangue!");
         if (fichaMedicaAlergia.length() == 0)
-            editTextAlergia.setError("Digite o Seu Sobrenome!");
+            editTextAlergia.setError("Digite !");
 
 
         //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTÁ AÇÃO
         if (fichaMedicaNome.length() != 0 && fichaMedicaRg.length() != 0 && fichaMedicaCpf.length() != 0
                 && fichaMedicaAltura.length() != 0 && fichaMedicaPeso.length() != 0 && fichaMedicaTelefone.length() != 0
-                && fichaMedicaContatoEmergencia.length() != 0) && fichaMedicaTelefone.length() != 0) && fichaMedicaAlergia.length() != 0) {
+                && fichaMedicaContatoEmergencia.length() != 0 && fichaMedicaTelefone.length() != 0 && fichaMedicaAlergia.length() != 0) {
 
-            if (fichaMedica == null){
+            if (fichaMedica == null) {
 
                 //CONVERTER PARA O TIPO DE DADOS QUE SERÁ ARMAZENADOS NO BANCO DE DADOS
                 int Rg = Integer.parseInt(editTextRG.getText().toString());
                 double altura = Double.parseDouble(editTextAltura.getText().toString());
                 double peso = Double.parseDouble(editTextPeso.getText().toString());
 
-                FichaMedicaCadastro paciente = new fichaMedica ();
+                Ficha_Medica fichaMedica = new Ficha_Medica(); //model
                 fichaMedica.setNome(fichaMedicaNome);
-                paciente.setRg(Rg);
-                paciente.setCpf(pacienteCpf);
-                paciente.setAltura(altura);
-                paciente.setPeso(peso);
-                paciente.setData(DateUtil.stringToDate(pacienteData));
-                paciente.setTelefone(pacienteTelefone);
-                paciente.setSobrenome(pacienteSobrenome);
+                fichaMedica.setRg(Rg);
+                fichaMedica.setCpf(fichaMedicaCpf);
+                fichaMedica.setAltura(altura);
+                fichaMedica.setPeso(peso);
+                fichaMedica.setDatanasc(DateUtil.stringToDate(fichaMedicaData));
+                fichaMedica.setTelefone(fichaMedicaTelefone);
+                fichaMedica.setTiposangue(fichaMedicaTipoSangue);
 
                 criadoComSucesso = fichaMedicaController.insert(fichaMedica);
-            }else{
+            } else {
                 //CONVERTER PARA O TIPO DE DADOS QUE SERÁ ARMAZENADOS NO BANCO DE DADOS
                 int Rg = Integer.parseInt(editTextRG.getText().toString());
                 double altura = Double.parseDouble(editTextAltura.getText().toString());
                 double peso = Double.parseDouble(editTextPeso.getText().toString());
 
-                paciente.setNome(pacienteNome);
-                paciente.setRg(Rg);
-                paciente.setCpf(pacienteCpf);
-                paciente.setAltura(altura);
-                paciente.setPeso(peso);
-                paciente.setData(DateUtil.stringToDate(pacienteData));
-                paciente.setTelefone(pacienteTelefone);
-                paciente.setSobrenome(pacienteSobrenome);
-                paciente.setIdHospital(idHospital);
-                paciente.setId_leito(idLeito);
+                fichaMedica.setNome(fichaMedicaNome);
+                fichaMedica.setRg(Rg);
+                fichaMedica.setCpf(fichaMedicaCpf);
+                fichaMedica.setAltura(altura);
+                fichaMedica.setPeso(peso);
+                fichaMedica.setDatanasc(DateUtil.stringToDate(fichaMedicaData));
+                fichaMedica.setTelefone(fichaMedicaTelefone);
+                fichaMedica.setContatoemergencia(fichaMedicaContatoEmergencia);
+                fichaMedica.setTiposangue(fichaMedicaTipoSangue);
+                fichaMedica.setAlergia(fichaMedicaAlergia);
 
-                pacienteController.edit(paciente, paciente.getId());
+                fichaMedicaController.edit(fichaMedica, fichaMedica.getId());
                 criadoComSucesso = true;
             }
+
         }
+    }
+
+    @Override
+    public void onDismiss(DialogInterface dialogInterface) {
+        fichaMedicaController.closeDb();
+    }
 
 }
