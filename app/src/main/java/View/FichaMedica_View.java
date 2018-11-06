@@ -17,8 +17,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import course.example.tools.R;
+
 import View.Cadastro.FichaMedicaCadastro;
 import course.example.tools.Ficha_Medica_Controller;
+
 import model.Ficha_Medica;
 
 public class FichaMedica_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
@@ -26,17 +29,17 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
     private ListView listView;
     private EditText editText;
     ArrayAdapter<String> adapter;
-    List<Ficha_Medica> FichaMedicaList; // é a classe model
-    private List<String> FichaMedicaListNome = new ArrayList<String>();
+    List<Ficha_Medica> fichaMedicaList; // é a classe model
+    private List<String> fichaMedicaListNome = new ArrayList<String>();
     private Ficha_Medica_Controller fichaMedicaController;
     private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.consulta_layout);
+        setContentView(R.layout.activity_consulta_layout);
 
-        listView = (ListView) findViewById(R.id.ListViwe);
+        listView = (ListView) findViewById(R.id.listView);
         editText = (EditText) findViewById(R.id.editTextPesquisar);
         imageView = (ImageView) findViewById(R.id.imgViewAdd);
 
@@ -67,19 +70,19 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
     @Override
     public void onClick(View view) {
 
-        Ficha_Medica fichaMedica  = new Ficha_Medica (this);
+        FichaMedicaCadastro fichaMedica  = new FichaMedicaCadastro(this);
     }
 
     public void atualizarRegistros() {
 
-        FichaMedicaListNome.clear();
+        fichaMedicaListNome.clear();
 
-        FichaMedicaList = fichaMedicaController.getAll();
+        fichaMedicaList = fichaMedicaController.getAll();
 
-        for (Ficha_Medica fichaMedica : FichaMedicaList)
-            FichaMedicaList.add(fichaMedica.getNome() + " " + fichaMedica.getRg() + " - CPF: " + fichaMedica.getCpf());
+        for (Ficha_Medica fichaMedica : fichaMedicaList)
+            fichaMedicaListNome.add(fichaMedica.getNome() + " " + fichaMedica.getRg() + " - CPF: " + fichaMedica.getCpf());
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, FichaMedicaListNome);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fichaMedicaListNome);
         listView.setAdapter(adapter);
 
     }
@@ -97,7 +100,7 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
                             //EDITAR
 
                             FichaMedicaCadastro fichaMedicaCadastro = new FichaMedicaCadastro(FichaMedica_View.this);
-                            FichaMedicaCadastro.loadFichaMedica(fichaMedica);
+                            fichaMedicaCadastro.loadFichaMedica(fichaMedica);
 
                         }else if (item == 1) {
                             //DELETAR
@@ -121,7 +124,7 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Ficha_Medica fichaMedica = FichaMedicaList.get(i);
+        Ficha_Medica fichaMedica = fichaMedicaList.get(i);
         alertDialog(fichaMedica);
 
     }

@@ -22,7 +22,7 @@
         android:background="@color/colorAccent"
         android:text="IMC"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="69dp" />
+        tools:layout_editor_absoluteY="64dp" />
 
     <Button
         android:id="@+id/btnSpeech"
@@ -31,7 +31,7 @@
         android:background="@color/colorAccent"
         android:text="SpeechToText"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="140dp" />
+        tools:layout_editor_absoluteY="128dp" />
 
     <Button
         android:id="@+id/btnCalculadora"
@@ -40,7 +40,7 @@
         android:background="@color/colorAccent"
         android:text="Calculadora"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="208dp" />
+        tools:layout_editor_absoluteY="191dp" />
 
 
     <Button
@@ -50,15 +50,33 @@
         android:background="@color/colorAccent"
         android:text="Calcular Média"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="282dp" />
+        tools:layout_editor_absoluteY="257dp" />
 
     <Button
         android:id="@+id/btnCadastrarLivros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:text="Cadastro de Livros"
+        android:text="Livros"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="355dp" />
+        tools:layout_editor_absoluteY="319dp" />
+
+    <Button
+        android:id="@+id/btnCadastrarFilmes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Filmes"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="379dp" />
+
+    <Button
+        android:id="@+id/btnCadastrarSeries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Séries"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="439dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -143,7 +143,7 @@ public class FichaMedicaCadastro implements DialogInterface.OnShowListener, View
         if (fichaMedicaTipoSangue.length() == 0)
             editTextTipoSangue.setError("Digite o Seu Tipo de Sangue!");
         if (fichaMedicaAlergia.length() == 0)
-            editTextAlergia.setError("Digite !");
+            editTextAlergia.setError("Digite ao que você tem alergia !");
 
 
         //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTÁ AÇÃO
