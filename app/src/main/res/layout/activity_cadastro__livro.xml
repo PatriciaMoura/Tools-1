@@ -65,14 +65,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="285dp" />
 
-    <Button
-        android:id="@+id/Cadastrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cadastrar"
-        android:typeface="sans"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="382dp" />
 
 
 </android.support.constraint.ConstraintLayout>

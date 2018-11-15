@@ -27,7 +27,7 @@ public class Filmes_Controller extends BaseController <Filmes_model> {
             columnId = c.getColumnIndex(model.Ficha_Medica.COLUMN_NOME);
             filmes_model.setNome(c.getString(columnId));
 
-            columnId = c.getColumnIndex(model.Ficha_Medica.COLUMN_DIRETOr);
+            columnId = c.getColumnIndex(model.Ficha_Medica.COLUMN_DIRETOR);
             filmes_model.set(c.getInt(columnId));
 
 

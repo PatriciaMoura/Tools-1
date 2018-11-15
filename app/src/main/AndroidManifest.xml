@@ -25,7 +25,8 @@
             android:label="@string/title_activity_ficha__medica"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Cadastro_Livro" />
-        <activity android:name=".consultaLayout"></activity>
+        <activity android:name=".consultaLayout" />
+        <activity android:name=".Filme"></activity>
     </application>
 
 </manifest>

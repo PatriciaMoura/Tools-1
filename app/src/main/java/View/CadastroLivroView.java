@@ -20,9 +20,7 @@ import course.example.tools.Cadastro_Livro;
 import model.Ficha_Medica;
 
 
-public class CadastroLivroView extends Activity implements  {
-
-    View.OnClickListener, AdapterView.OnItemClickListener{
+public class CadastroLivroView extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
 
         private ListView listView;
         private EditText editText;
