@@ -7,9 +7,9 @@ import android.database.Cursor;
 
 import model.Livros_model;
 
-public class Cadastro_Livro extends BaseController <Livros_model> {
+public class Livro_Controller extends BaseController <Livros_model> {
 
-    public Cadastro_Livro(Context context) {
+    public Livro_Controller(Context context) {
         super(context);
 
     } //integração com o banco

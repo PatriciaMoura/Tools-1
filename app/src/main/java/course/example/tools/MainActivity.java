@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
 
                 case R.id.btnCadastrarLivros:
-                    intent = new Intent(MainActivity.this, Cadastro_Livro.class);
+                    intent = new Intent(MainActivity.this, Livro_Controller.class);
                     startActivity(intent);
 
                 case R.id.btnCadastrarFilmes:

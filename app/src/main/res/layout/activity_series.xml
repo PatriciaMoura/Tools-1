@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Livro_Controller"
-    android:orientation="horizontal">
+    tools:context=".Series">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastro de Livros"
+                android:text="Cadastro de Séries"
                 android:typeface="sans"
                 android:textSize="15sp"
                 android:gravity="center"/>
@@ -41,13 +40,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Título:"
+                android:text="Nome da Série:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtTitulo"
+                android:id="@+id/edtNomeSerie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,13 +63,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Autor(a):"
+                android:text="Diretor(a):"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtAutor"
+                android:id="@+id/edtDiretor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -110,17 +109,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Editora:"
+                android:text="Atriz Principal:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edteditora"
+                android:id="@+id/edtAtrizPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="textPersonName"/>
 
         </LinearLayout>
 
@@ -133,17 +132,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Edição:"
+                android:text="Ator Principal:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edtEdicao"
+                android:id="@+id/edtAtorPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="textPersonName"/>
 
         </LinearLayout>
 
@@ -156,36 +155,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="País de Origem:"
+                android:text="Classificação:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtPaisOrigem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="text"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Quant. Capítulos:"
-                android:typeface="sans"
-                android:textSize="16sp"
-                android:layout_weight="2"/>
-
-            <EditText
-                android:id="@+id/edtQuantCapitulosLivro"
+                android:id="@+id/edtClassificacao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -202,17 +178,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quant. Páginas:"
+                android:text="Produtora:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtQuantPaginas"
+                android:id="@+id/edtProdutora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
         </LinearLayout>
 
@@ -239,7 +215,52 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quant. Temp.:"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtQuantTemporadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quant. Capitulos:"
+                android:typeface="sans"
+                android:textSize="16sp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtQuantCapitulosSeries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="number"/>
+
+        </LinearLayout>
 
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

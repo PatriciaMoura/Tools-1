@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Livro_Controller"
-    android:orientation="horizontal">
-
+    tools:context=".Games">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -25,7 +23,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastro de Livros"
+                android:text="Cadastro de Games"
                 android:typeface="sans"
                 android:textSize="15sp"
                 android:gravity="center"/>
@@ -41,13 +39,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Título:"
+                android:text="Nome:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtTitulo"
+                android:id="@+id/edtNomeGame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

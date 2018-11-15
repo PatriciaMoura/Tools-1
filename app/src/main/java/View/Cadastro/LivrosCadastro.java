@@ -1,6 +1,6 @@
 package View.Cadastro;
 
-import course.example.tools.Cadastro_Livro;
+import course.example.tools.Livro_Controller;
 
 import android.app.AlertDialog;
 import android.widget.EditText;
@@ -11,7 +11,7 @@ import java.util.List;
 public class LivrosCadastro {
     private EditText editTextTitulo, editTextAutor, editTextEditora;
 
-    private Cadastro_Livro cadastro_livro;
+    private Livro_Controller _livroController;
     private AlertDialog dialog;
     private EditText editTextTitulo, editTextAutor, editTextEditora;
 
