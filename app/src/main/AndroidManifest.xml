@@ -17,9 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Calculadora" />
-        <activity android:name=".IMC" />
         <activity android:name=".SpeechToText" />
-        <activity android:name=".Calcular_Media" />
         <activity
             android:name=".Ficha_Medica_Controller"
             android:label="@string/title_activity_ficha__medica"

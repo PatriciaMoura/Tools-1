@@ -4,64 +4,73 @@ import java.util.Date;
 
 public class Games_model {
 
-    // Nome das colunas
+    public static final String TABLE = "Games";
+
+    //Nome colunas
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_NOME = "nome";
-    public static final String COLUMN_GENERO = "genero";
-    public static final String COLUMN_CPF ="CPF";
-    public static final String COLUMN_DATANASC = "datanasc";
-    public static final String COLUMN_TIPOSANGUE = "TipoSangue";
-    public static final String COLUMN_TELEFONE = "telefone";
-    public static final String COLUMN_CONTATOEMERGENCIA = "contatoemergencia";
-    public static final String COLUMN_ALERGIA = "alergia";
+    public static final String COLUMN_NOMEGAMES = "nomegames";
+    public static final String COLUMN_ABREVIACAO = "abreviacao";
+    public static final String COLUMN_GENEROGAMES = "generogames";
+    public static final String COLUMN_DATALANCAMENTOGAMES = "datalancamentogames";
+    public static final String COLUMN_MODOJOGO = "modojogo";
+    public static final String COLUMN_PUBLICADORA = "publicadora";
+    public static final String COLUMN_DESENVOLVEDORA = "desenvolvedora";
+    public static final String COLUMN_QUANTLANCADAGAMES = "quantlancadagames";
+    public static final String COLUMN_PLATAFORMAS = "plataformas";
+    public static final String COLUMN_MELHORFRANQUIA = "melhorfranquia";
 
-    // Criando tabela
+    //Criando tabela
 
-    public static final String SQL_PESSOA = COLUMN_ID    + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_NOME                + " TEXT,"
-            + COLUMN_GENERO              + " TEXT,"
-            + COLUMN_CPF                 + " TEXT, "
-            + COLUMN_DATANASC            + " TEXT,"
-            + COLUMN_TIPOSANGUE          + " TEXT, "
-            + COLUMN_TELEFONE            + " INTEGER, "
-            + COLUMN_CONTATOEMERGENCIA   + " INTEGER,"
-            + COLUMN_ALERGIA             + " TEXT,";
+    public static final String SQL_CREATE = "CREATE TABLE" + TABLE + "( "
+            + COLUMN_ID                      + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COLUMN_NOMEGAMES               + "TEXT,"
+            + COLUMN_ABREVIACAO              + "TEXT,"
+            + COLUMN_DATALANCAMENTOGAMES     + "TEXT,"
+            + COLUMN_GENEROGAMES             + "TEXT,"
+            + COLUMN_MODOJOGO                + "TEXT"
+            + COLUMN_PUBLICADORA             + "TEXT"
+            + COLUMN_DESENVOLVEDORA          + "TEXT"
+            + COLUMN_QUANTLANCADAGAMES       + "INTEGER"
+            + COLUMN_PLATAFORMAS             + "TEXT"
+            + COLUMN_MELHORFRANQUIA          + "TEXT)";
 
     private int id;
-    private int rg;
-    private String telefone;
-    private String contatoemergencia;
-    private String nome, cpf, tiposangue, alergia;
-    private Date datanasc;
-
+    private String nomegames, abreviacao, generogames, modojogo, publicadora, desenvolvedora, plataformas, melhorfranquia;
+    private Date datalancamentogames;
+    private Integer quantlancadagames;
 
     public int getId () { return id; }
     public void setId (int id) { this.id = id; }
 
-    public int getRg () { return rg;}
-    public void setRg (int rg) { this.rg = rg;}
+    public String getNomegames () { return nomegames;}
+    public void setNomegames (String nomegames) {this.nomegames = nomegames;}
 
-    public String gettelefone () { return telefone; }
-    public void setTelefone (String telefone) { this.telefone = telefone;}
+    public String getAbreviacao () {return abreviacao;}
+    public void setAbreviacao (String abreviacao) {this.abreviacao = abreviacao;}
 
-    public String getContatoemergencia () { return contatoemergencia; }
-    public void setContatoemergencia (String contatoemergencia) { this.contatoemergencia = contatoemergencia; }
+    public Date getDatalancamentogames () {return datalancamentogames;}
+    public void setDatalancamentogames (Date datalancamentogames) {this.datalancamentogames = datalancamentogames;}
 
-    public String getNome () { return nome; }
-    public void setNome (String nome) { this.nome = nome; }
+    public String getGenerogames () {return generogames;}
+    public void setGenerogames (String generogames) {this.generogames = generogames;}
 
-    public String getCpf () { return cpf; }
-    public void setCpf (String cpf) {this.cpf = cpf; }
+    public String getModojogo () {return modojogo;}
+    public void setModojogo (String modojogo) {this.modojogo = modojogo;}
 
-    public String getTiposangue () { return tiposangue; }
-    public void setTiposangue (String tiposangue) { this.tiposangue = tiposangue; }
+    public String getPublicadora () {return publicadora;}
+    public void setPublicadora (String publicadora) {this.publicadora = publicadora;}
 
-    public String getAlergia () { return alergia;}
-    public void  setAlergia (String alergia) { this.alergia = alergia;}
+    public String getColumnDesenvolvedora () {return desenvolvedora;}
+    public void setDesenvolvedora (String desenvolvedora) {this.desenvolvedora = desenvolvedora;}
 
-    public Date getDatanasc () { return datanasc; }
-    public void setDatanasc (Date datanasc) {this.datanasc = datanasc;}
+    public String getPlataformas () {return plataformas;}
+    public void setPlataformas (String plataformas) {this.plataformas = plataformas;}
 
+    public String getMelhorfranquia () {return melhorfranquia;}
+    public void setMelhorfranquia (String melhorfranquia) {this.melhorfranquia = melhorfranquia;}
+
+    public Integer getQuantlancadaGames () {return quantlancadagames;}
+    public void setQuantlancadagames (Integer quantlancadagames) {this.quantlancadagames = quantlancadagames;}
 
 
 }

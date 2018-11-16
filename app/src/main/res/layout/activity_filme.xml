@@ -68,7 +68,7 @@
             android:layout_weight="2"/>
 
         <EditText
-            android:id="@+id/edtDiretor"
+            android:id="@+id/edtDiretorFilme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -114,7 +114,7 @@
             android:layout_weight="1"/>
 
         <EditText
-            android:id="@+id/edtAtrizPrincipal"
+            android:id="@+id/edtAtrizPrincipalFilme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -137,7 +137,7 @@
             android:layout_weight="1"/>
 
         <EditText
-            android:id="@+id/edtAtorPrincipal"
+            android:id="@+id/edtAtorPrincipalFilme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -160,7 +160,7 @@
             android:layout_weight="2"/>
 
         <EditText
-            android:id="@+id/edtClassificacao"
+            android:id="@+id/edtClassificacaoFilme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -183,7 +183,7 @@
             android:layout_weight="2"/>
 
         <EditText
-            android:id="@+id/edtProdutora"
+            android:id="@+id/edtProdutoraFilme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
