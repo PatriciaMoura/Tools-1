@@ -16,11 +16,11 @@
         android:text="Ficha Médica" />
 
     <Button
-        android:id="@+id/btnIMC"
+        android:id="@+id/btnViagens"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:text="IMC"
+        android:text="Viagens"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="64dp" />
 
@@ -34,26 +34,26 @@
         tools:layout_editor_absoluteY="128dp" />
 
     <Button
-        android:id="@+id/btnCalculadora"
+        android:id="@+id/btnMusica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:text="Calculadora"
+        android:text="Música"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="191dp" />
 
 
     <Button
-        android:id="@+id/btnCalcularMedia"
+        android:id="@+id/btnGames"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:text="Calcular Média"
+        android:text="Games"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="257dp" />
 
     <Button
-        android:id="@+id/btnCadastrarLivros"
+        android:id="@+id/btnLivros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
@@ -62,7 +62,7 @@
         tools:layout_editor_absoluteY="319dp" />
 
     <Button
-        android:id="@+id/btnCadastrarFilmes"
+        android:id="@+id/btnFilmes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
@@ -71,7 +71,7 @@
         tools:layout_editor_absoluteY="379dp" />
 
     <Button
-        android:id="@+id/btnCadastrarSeries"
+        android:id="@+id/btnSeries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"

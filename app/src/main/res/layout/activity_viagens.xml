@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Livro_Controller"
-    android:orientation="horizontal">
-
+    tools:context=".Viagens_Controller">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -25,7 +23,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastro de Livros"
+                android:text="Cadastro de Viagens"
                 android:typeface="sans"
                 android:textSize="15sp"
                 android:gravity="center"/>
@@ -41,13 +39,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Título:"
+                android:text="Local:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtTitulo"
+                android:id="@+id/edtLocal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,36 +62,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Autor(a):"
+                android:text="Data Ida:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtAutor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="textPersonName"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Data de Lançamento:"
-                android:typeface="sans"
-                android:textSize="17sp"
-                android:layout_weight="1"/>
-
-            <EditText
-                android:id="@+id/edtDataLancamentoLivro"
+                android:id="@+id/edtDataIda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -110,17 +85,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Editora:"
+                android:text="Data Volta:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edteditora"
+                android:id="@+id/edtDataVolta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="date"/>
 
         </LinearLayout>
 
@@ -133,13 +108,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Edição:"
+                android:text="CIA Aérea:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edtEdicao"
+                android:id="@+id/edtCiaAerea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -156,36 +131,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="País de Origem:"
+                android:text="Parcelado?"
                 android:typeface="sans"
                 android:textSize="17sp"
-                android:layout_weight="2"/>
+                android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edtPaisOrigem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="text"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Quant. Capítulos:"
-                android:typeface="sans"
-                android:textSize="16sp"
-                android:layout_weight="2"/>
-
-            <EditText
-                android:id="@+id/edtQuantCapitulosLivro"
+                android:id="@+id/edtParcelado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -202,17 +154,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quant. Páginas:"
+                android:text="Hotel:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtQuantPaginas"
+                android:id="@+id/edtHotel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
         </LinearLayout>
 
@@ -225,13 +177,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gênero:"
+                android:text="Translado?"
                 android:typeface="sans"
                 android:textSize="17sp"
-                android:layout_weight="1"/>
+                android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtGeneroLivro"
+                android:id="@+id/edtTranslado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -239,6 +191,51 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guia?"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edtGuia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valor:"
+                android:typeface="sans"
+                android:textSize="15sp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtValor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

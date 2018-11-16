@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Livro_Controller"
-    android:orientation="horizontal">
+    tools:context=".Musica_Controller">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastro de Livros"
+                android:text="Cadastro de Álbuns Peferidos"
                 android:typeface="sans"
                 android:textSize="15sp"
                 android:gravity="center"/>
@@ -41,13 +40,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Título:"
+                android:text="Artista:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtTitulo"
+                android:id="@+id/edtArtista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,155 +63,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Autor(a):"
+                android:text="Álbum:"
                 android:typeface="sans"
                 android:textSize="17sp"
                 android:layout_weight="2"/>
 
             <EditText
-                android:id="@+id/edtAutor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="textPersonName"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Data de Lançamento:"
-                android:typeface="sans"
-                android:textSize="17sp"
-                android:layout_weight="1"/>
-
-            <EditText
-                android:id="@+id/edtDataLancamentoLivro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="date"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Editora:"
-                android:typeface="sans"
-                android:textSize="17sp"
-                android:layout_weight="1"/>
-
-            <EditText
-                android:id="@+id/edteditora"
+                android:id="@+id/edtAlbum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="text"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Edição:"
-                android:typeface="sans"
-                android:textSize="17sp"
-                android:layout_weight="1"/>
-
-            <EditText
-                android:id="@+id/edtEdicao"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="text"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="País de Origem:"
-                android:typeface="sans"
-                android:textSize="17sp"
-                android:layout_weight="2"/>
-
-            <EditText
-                android:id="@+id/edtPaisOrigem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="text"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Quant. Capítulos:"
-                android:typeface="sans"
-                android:textSize="16sp"
-                android:layout_weight="2"/>
-
-            <EditText
-                android:id="@+id/edtQuantCapitulosLivro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="number"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Quant. Páginas:"
-                android:typeface="sans"
-                android:textSize="17sp"
-                android:layout_weight="2"/>
-
-            <EditText
-                android:id="@+id/edtQuantPaginas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -231,7 +92,7 @@
                 android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edtGeneroLivro"
+                android:id="@+id/edtGeneroMusical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -239,6 +100,165 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Lançamento:"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edtDataLancamentoMusica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="date"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Faixas:"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtFaixas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gravadora:"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtGravadora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Produtor:"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edtProdutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estúdio:"
+                android:typeface="sans"
+                android:textSize="16dp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtEstudio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Faixa Favorita:"
+                android:typeface="sans"
+                android:textSize="16dp"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/edtFaixaFavorita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="number"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prêmios:"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edtPremio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

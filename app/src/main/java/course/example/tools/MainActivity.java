@@ -12,7 +12,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Intent intent;
-    Button btnFichaMedica, btnIMC, btnSpeech, btnCalculadora, btnCalcularMedia, btnCadastrarLivros, btnCadastrarFilmes, btnCadastrarSeries;
+    Button btnFichaMedica, btnViagens, btnSpeech, btnMusica, btnGames, btnLivros, btnFilmes, btnSeries;
 
 
     protected void onCreated (Bundle saveInstanceState){
@@ -22,26 +22,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnFichaMedica = (Button) findViewById(R.id.btnFichaMedica);
         btnFichaMedica.setOnClickListener(this);
 
-        btnIMC = (Button) findViewById(R.id.btnIMC);
-        btnIMC.setOnClickListener(this);
+        btnViagens = (Button) findViewById(R.id.btnIMC);
+        btnViagens.setOnClickListener(this);
 
         btnSpeech = (Button) findViewById(R.id.btnSpeech);
         btnSpeech.setOnClickListener(this);
 
-        btnCalculadora = (Button) findViewById(R.id.btnCalculadora);
-        btnCalculadora.setOnClickListener(this);
+        btnMusica = (Button) findViewById(R.id.btnCalculadora);
+        btnMusica.setOnClickListener(this);
 
-        btnCalcularMedia = (Button) findViewById(R.id.btnCalcularMedia);
-        btnCalcularMedia.setOnClickListener(this);
+        btnGames = (Button) findViewById(R.id.btnCalcularMedia);
+        btnGames.setOnClickListener(this);
 
-        btnCadastrarLivros = (Button) findViewById(R.id.btnCadastrarLivros);
-        btnCadastrarLivros.setOnClickListener(this);
+        btnLivros = (Button) findViewById(R.id.btnCadastrarLivros);
+        btnLivros.setOnClickListener(this);
 
-        btnCadastrarFilmes = (Button) findViewById(R.id.btnCadastrarFilmes);
-        btnCadastrarFilmes.setOnClickListener(this);
+        btnFilmes = (Button) findViewById(R.id.btnCadastrarFilmes);
+        btnFilmes.setOnClickListener(this);
 
-        btnCadastrarSeries = (Button) findViewById(R.id.btnCadastrarSeries);
-        btnCadastrarSeries.setOnClickListener(this);
+        btnSeries = (Button) findViewById(R.id.btnCadastrarSeries);
+        btnSeries.setOnClickListener(this);
     }
 
 
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(intent);
                     break;
 
-                case R.id.btnIMC:
-                    intent = new Intent(MainActivity.this, IMC.class);
+                case R.id.btnViagens:
+                    intent = new Intent(MainActivity.this, Viagens_Controller.class);
                     startActivity(intent);
                     break;
 
@@ -66,25 +66,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(intent);
                     break;
 
-                case R.id.btnCalculadora:
-                    intent = new Intent(MainActivity.this, Calculadora.class);
+                case R.id.btnMusica:
+                    intent = new Intent(MainActivity.this, Musica_Controller.class);
                     startActivity(intent);
                     break;
 
-                case R.id.btnCalcularMedia:
-                    intent = new Intent(MainActivity.this, Calcular_Media.class);
+                case R.id.btnGames:
+                    intent = new Intent(MainActivity.this, Games_Controller.class);
                     startActivity(intent);
                     break;
 
-                case R.id.btnCadastrarLivros:
+                case R.id.btnLivros:
                     intent = new Intent(MainActivity.this, Livro_Controller.class);
                     startActivity(intent);
 
-                case R.id.btnCadastrarFilmes:
+                case R.id.btnFilmes:
                     intent = new Intent( MainActivity.this,Filmes_Controller.class);
                     startActivity(intent);
 
-                case R.id.btnCadastrarSeries:
+                case R.id.btnSeries:
                     intent = new Intent( MainActivity.this, Series_Controller.class);
                     startActivity(intent);
             }
