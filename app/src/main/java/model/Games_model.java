@@ -27,12 +27,12 @@ public class Games_model {
             + COLUMN_ABREVIACAO              + "TEXT,"
             + COLUMN_DATALANCAMENTOGAMES     + "TEXT,"
             + COLUMN_GENEROGAMES             + "TEXT,"
-            + COLUMN_MODOJOGO                + "TEXT"
-            + COLUMN_PUBLICADORA             + "TEXT"
-            + COLUMN_DESENVOLVEDORA          + "TEXT"
-            + COLUMN_QUANTLANCADAGAMES       + "INTEGER"
-            + COLUMN_PLATAFORMAS             + "TEXT"
-            + COLUMN_MELHORFRANQUIA          + "TEXT)";
+            + COLUMN_MODOJOGO                + "TEXT,"
+            + COLUMN_PUBLICADORA             + "TEXT,"
+            + COLUMN_DESENVOLVEDORA          + "TEXT,"
+            + COLUMN_QUANTLANCADAGAMES       + "INTEGER,"
+            + COLUMN_PLATAFORMAS             + "TEXT,"
+            + COLUMN_MELHORFRANQUIA          + "TEXT,)";
 
     private int id;
     private String nomegames, abreviacao, generogames, modojogo, publicadora, desenvolvedora, plataformas, melhorfranquia;
@@ -60,7 +60,7 @@ public class Games_model {
     public String getPublicadora () {return publicadora;}
     public void setPublicadora (String publicadora) {this.publicadora = publicadora;}
 
-    public String getColumnDesenvolvedora () {return desenvolvedora;}
+    public String getDesenvolvedora () {return desenvolvedora;}
     public void setDesenvolvedora (String desenvolvedora) {this.desenvolvedora = desenvolvedora;}
 
     public String getPlataformas () {return plataformas;}

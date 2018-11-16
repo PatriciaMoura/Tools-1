@@ -34,7 +34,7 @@ public class Musica_model {
             + COLUMN_PRODUTORAMUSICA         + "TEXT,"
             + COLUMN_ESTUDIO                 + "TEXT,"
             + COLUMN_FAIXAFAVORITA           + "INTEGER,"
-            + COLUMN_PREMIO                  + "TEXT )";
+            + COLUMN_PREMIO                  + "TEXT, )";
 
     private int id;
     private String artista, album, generomusical, gravadoramusica, produtoramusica, estudio, premio;

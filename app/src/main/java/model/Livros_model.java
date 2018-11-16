@@ -32,7 +32,7 @@ public class Livros_model {
             + COLUMN_PAISORIGEM             + "TEXT,"
             + COLUMN_QUANTCAPITULOLIVRO     + "INTEGER,"
             + COLUMN_QUANTPAGINA            + "INTEGER,"
-            + COLUMN_GENEROLIVRO            + "TEXT )";
+            + COLUMN_GENEROLIVRO            + "TEXT, )";
 
     private int id;
     private String titulo, autor, editora, edicao, paisorigem, generolivro;

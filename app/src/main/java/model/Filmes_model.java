@@ -30,15 +30,15 @@ public class Filmes_model {
             + COLUMN_DIRETORFILME           + "TEXT,"
             + COLUMN_DATALANCAMENTOFILME    + "TEXT,"
             + COLUMN_ATORPRINCIPALFILME     + "TEXT,"
-            + COLUMN_ATRIZPRINCIPALFILME    + "TEXT"
-            + COLUMN_CLASSIFICACAOFILME     + "INTEGER"
-            + COLUMN_PRODUTORAFILME         + "TEXT"
-            + COLUMN_GENEROFILME            + "TEXT"
-            + COLUMN_MUSICATEMA             + "TEXT"
-            + COLUMN_DURACAO                + "INTEGER)";
+            + COLUMN_ATRIZPRINCIPALFILME    + "TEXT,"
+            + COLUMN_CLASSIFICACAOFILME     + "INTEGER,"
+            + COLUMN_PRODUTORAFILME         + "TEXT,"
+            + COLUMN_GENEROFILME            + "TEXT,"
+            + COLUMN_MUSICATEMA             + "TEXT,"
+            + COLUMN_DURACAO                + "INTEGER,)";
 
-    private int id;
-    private String nomefilme, diretorfilme, atorprincipalfilme, atrizprincipalfilme, classificacaofilme, produtorafilme, generofilme, musicatema;
+    private int id, classificacaofilme;
+    private String nomefilme, diretorfilme, atorprincipalfilme, atrizprincipalfilme, produtorafilme, generofilme, musicatema;
     private Date datalancamentofilme;
     private String duracao;
 
@@ -57,8 +57,8 @@ public class Filmes_model {
     public String getAtrizprincipalfilme () {return atrizprincipalfilme;}
     public void setAtrizprincipalfilme (String atrizprincipalfilme) {this.atrizprincipalfilme = atrizprincipalfilme;}
 
-    public String getClassificacaofilme () {return classificacaofilme;}
-    public void setClassificacaofilme (String classificacaofilme) {this.classificacaofilme = classificacaofilme;}
+    public Integer getClassificacaofilme () {return classificacaofilme;}
+    public void setClassificacaofilme (Integer classificacaofilme) {this.classificacaofilme = classificacaofilme;}
 
     public String getProdutorafilme () {return produtorafilme;}
     public void setProdutorafilme (String produtorafilme) {this.produtorafilme = produtorafilme;}
@@ -68,6 +68,9 @@ public class Filmes_model {
 
     public Date getDatalancamentofilme () {return datalancamentofilme;}
     public void setDatalancamentofilme (Date datalancamentofilme) {this.datalancamentofilme = datalancamentofilme;}
+
+    public String getMusicatema () {return musicatema;}
+    public void setMusicatema (String musicatema) {this.musicatema = musicatema;}
 
     public String getDuracao () {return duracao;}
     public void setDuracao (String duracao) {this.duracao = duracao;}

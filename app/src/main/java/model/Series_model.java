@@ -28,12 +28,12 @@ public class Series_model {
             + COLUMN_DIRETORSERIE           + "TEXT,"
             + COLUMN_DATALANCAMENTOSERIE    + "TEXT,"
             + COLUMN_ATORPRINCIPALSERIE     + "TEXT,"
-            + COLUMN_ATRIZPRINCIPALSERIE    + "TEXT"
-            + COLUMN_CLASSIFICACAOSERIE     + "INTEGER"
-            + COLUMN_PRODUTORASERIE         + "TEXT"
-            + COLUMN_GENEROSERIE            + "TEXT"
-            + COLUMN_QUANTTEMPORADAS        + "INTEGER"
-            + COLUMN_QUANTCAPITULOSSERIE    + "INTEGER)";
+            + COLUMN_ATRIZPRINCIPALSERIE    + "TEXT,"
+            + COLUMN_CLASSIFICACAOSERIE     + "INTEGER,"
+            + COLUMN_PRODUTORASERIE         + "TEXT,"
+            + COLUMN_GENEROSERIE            + "TEXT,"
+            + COLUMN_QUANTTEMPORADAS        + "INTEGER,"
+            + COLUMN_QUANTCAPITULOSSERIE    + "INTEGER,)";
 
     private int id;
     private String nomeserie, diretorserie, atorprincipalserie, atrizprincipalserie, produtoraserie, generoserie;

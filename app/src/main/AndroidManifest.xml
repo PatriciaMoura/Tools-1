@@ -23,7 +23,6 @@
             android:label="@string/title_activity_ficha__medica"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Livro_Controller" />
-        <activity android:name=".consultaLayout" />
         <activity android:name=".Games_Controller" />
         <activity android:name=".Musica_Controller" />
         <activity android:name=".Viagens_Controller"></activity>
