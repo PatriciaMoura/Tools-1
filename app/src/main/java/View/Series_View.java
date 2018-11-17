@@ -67,7 +67,7 @@ public class Series_View extends Activity implements View.OnClickListener, Adapt
     @Override
     public void onClick(View view) {
 
-        SeriesCadastro fichaMedica  = new SeriesCadastro(this);
+        SeriesCadastro seriesCadastro  = new SeriesCadastro(this);
     }
 
     public void atualizarRegistros() {

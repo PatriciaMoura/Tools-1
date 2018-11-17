@@ -137,21 +137,21 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
             editTextNomeSerie.setError("Digite o Nome da Série!");
         if (serieDiretor.length() == 0)
             editTextDiretorSerie.setError("Digite o Diretor!");
-        if (editTextDataLancamentoSerie.length() == 0)
+        if (serieDataLancamento.length() == 0)
             editTextDataLancamentoSerie.setError("Digite a Data!");
-        if (editTextAtrizPrincipalSerie.length() == 0)
+        if (serieAtrizPrincipal.length() == 0)
             editTextAtrizPrincipalSerie.setError("Digite o Nome da Atriz!");
-        if (editTextAtorPrincipalserie.length() == 0)
+        if (serieAtorPrincipal.length() == 0)
             editTextAtorPrincipalserie.setError("Digite o Nome do Ator!");
-        if (editTextClassificacaoSerie.length() == 0)
+        if (serieClassificacao.length() == 0)
             editTextClassificacaoSerie.setError("Digite a Classificação da Série!");
-        if (editTextProdutoraSerie.length() == 0)
+        if (serieProdutora.length() == 0)
             editTextProdutoraSerie.setError("Digite a Produtora da Série!");
-        if (editTextedtGeneroSerie.length() == 0)
+        if (serieGenero.length() == 0)
             editTextedtGeneroSerie.setError("Digite o Gênero!");
-        if (editTextQuantTemp.length() == 0)
+        if (serieQuantTemp.length() == 0)
             editTextQuantTemp.setError("Digite a Quant. de Temporadas!");
-        if (editTextQuantCapit.length() == 0)
+        if (serieQuantCapit.length() == 0)
             editTextQuantCapit.setError("Digite a Duração de Capítulos!");
 
         //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTÁ AÇÃO
