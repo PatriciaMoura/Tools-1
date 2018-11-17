@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import View.Cadastro.FilmesCadastro;
 import course.example.tools.Filmes_Controller;
 import model.Filmes_model;
 
@@ -22,7 +23,7 @@ import model.Filmes_model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilmesView extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
+public class FilmesView extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView listView;
     private EditText editText;
@@ -68,48 +69,48 @@ public class FilmesView extends Activity implements View.OnClickListener, Adapte
     @Override
     public void onClick(View view) {
 
-        PacienteCadastro pacienteCadastro = new PacienteCadastro(this);
+        FilmesCadastro filmesCadastro = new FilmesCadastro(this);
     }
 
     public void atualizarRegistros() {
 
-        pacienteListNome.clear();
+        filmesListNome.clear();
 
-        pacienteList = pacienteController.getAll();
+        filmesList = filmesController.getAll();
 
-        for (Paciente paciente : pacienteList)
-            pacienteListNome.add(paciente.getNome() + " " + paciente.getSobrenome() + " - CPF: " + paciente.getCpf());
+        for (Filmes_model filmes_model : filmesList)
+            filmesListNome.add(filmes_model.getNomefilme() + " " + filmes_model.getDiretorfilme());
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pacienteListNome);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, filmesListNome);
         listView.setAdapter(adapter);
 
     }
 
-    public void alertDialog(final Paciente paciente){
+    public void alertDialog(final Filmes_model filmes_model) {
 
-        final CharSequence[] itens = {"editar","deletar"};
+        final CharSequence[] itens = {"editar", "deletar"};
 
-        new AlertDialog.Builder(this).setTitle("Detalhes do contato")
+        new AlertDialog.Builder(this).setTitle("Detalhes")
                 .setItems(itens, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int item) {
 
-                        if (item == 0){
+                        if (item == 0) {
                             //EDITAR
 
-                            PacienteCadastro pacienteCadastro = new PacienteCadastro(PacienteView.this);
-                            pacienteCadastro.loadPaciente(paciente);
+                            FilmesCadastro filmesCadastro = new FilmesCadastro(FilmesView.this);
+                            filmesCadastro.loadFilmes(filmes_model);
 
-                        }else if (item == 1) {
+                        } else if (item == 1) {
                             //DELETAR
-                            boolean isDeletouComSucesso = pacienteController.delete(paciente.getId());
+                            boolean isDeletouComSucesso = filmesController.delete(filmes_model.getId());
 
-                            if (isDeletouComSucesso){
-                                Toast.makeText(PacienteView.this, "Contato deletado.", Toast.LENGTH_SHORT).show();
+                            if (isDeletouComSucesso) {
+                                Toast.makeText(FilmesView.this, "Deletado.", Toast.LENGTH_SHORT).show();
                                 atualizarRegistros();
 
-                            }else{
-                                Toast.makeText(PacienteView.this, "Erro ao deletar o contato.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(FilmesView.this, "Erro ao deletato.", Toast.LENGTH_SHORT).show();
                             }
                         }
                         dialogInterface.dismiss();
@@ -122,7 +123,9 @@ public class FilmesView extends Activity implements View.OnClickListener, Adapte
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Paciente paciente = pacienteList.get(i);
-        alertDialog(paciente);
+        Filmes_model filmes_model = filmesList.get(i);
+        alertDialog(filmes_model);
 
     }
+
+}
