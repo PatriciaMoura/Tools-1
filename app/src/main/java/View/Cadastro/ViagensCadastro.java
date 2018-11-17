@@ -28,7 +28,7 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
 
     private AlertDialog dialog;
     private EditText editTextLocal, editTextDataIda, editTextDataVolta, editTextCIAAerea, editTextValor;
-    private EditText editTextParcelado, editTextHotel, editTextTranslado, editTextGuia, editTextedtVisto;
+    private EditText editTextParcelado, editTextHotel, editTextTranslado, editTextGuia, editTextVisto;
 
 
     private List<String> listaViagens = new ArrayList<String>();
@@ -48,7 +48,7 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
 
         //CRIA O LAYOUT COMO ALERTDIALOG
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_filme, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_viagens, null);
         builder.setView(view);
 
         //ATRIBUI AS VARIVEIS AOS ITENS DO LAYOUT
@@ -61,7 +61,7 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
         editTextHotel = (EditText) view.findViewById(R.id.edtHotel);
         editTextTranslado = (EditText) view.findViewById(R.id.edtTranslado);
         editTextGuia = (EditText) view.findViewById(R.id.edtGuia);
-        editTextedtVisto = (EditText) view.findViewById(R.id.edtQuantVisto);
+        editTextVisto = (EditText) view.findViewById(R.id.edtQuantVisto);
 
 
         //CRIA OS BUTTONS DO ALERTDIALOG
@@ -88,7 +88,7 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
         editTextHotel.setText(viagens_model.getHotel());
         editTextTranslado.setText(viagens_model.getTranslado());
         editTextGuia.setText(viagens_model.getVisto());
-        editTextedtVisto.setText(viagens_model.getVisto());
+        editTextVisto.setText(viagens_model.getVisto());
 
     }
 
@@ -127,7 +127,7 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
         String viagensHotel = editTextHotel.getText().toString();
         String viagensTranslado = editTextTranslado.getText().toString();
         String viagensGuia = editTextGuia.getText().toString();
-        String viagensVisto = editTextedtVisto.getText().toString();
+        String viagensVisto = editTextVisto.getText().toString();
 
         //APRESENTA OS ERROS AO DEIXAR ALGUM ATRIBUTO EM BRANCO
         if (viagensLocal.length() == 0)
@@ -148,8 +148,8 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
             editTextTranslado.setError("Digite se contratou Translado!");
         if (viagensGuia.length() == 0)
             editTextGuia.setError("Digite se contratou guia!");
-        if (editTextedtVisto.length() == 0)
-            editTextedtVisto.setError("Digite se foi preciso Visto!");
+        if (editTextVisto.length() == 0)
+            editTextVisto.setError("Digite se foi preciso Visto!");
 
         //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTÁ AÇÃO
         if (viagensLocal.length() != 0 && viagensDataIda.length() != 0 && viagensDatavolta.length() != 0

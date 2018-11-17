@@ -116,7 +116,7 @@
                 android:layout_weight="1"/>
 
             <EditText
-                android:id="@+id/edteditora"
+                android:id="@+id/edtEditora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -236,6 +236,29 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data de Compra:"
+                android:typeface="sans"
+                android:textSize="17sp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edtDataCompra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="date"/>
 
         </LinearLayout>
 

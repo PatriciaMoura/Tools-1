@@ -49,7 +49,7 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
 
         //CRIA O LAYOUT COMO ALERTDIALOG
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_filme, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_series, null);
         builder.setView(view);
 
         //ATRIBUI AS VARIVEIS AOS ITENS DO LAYOUT

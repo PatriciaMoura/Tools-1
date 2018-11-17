@@ -19,6 +19,7 @@ public class Livros_model {
     public static final String COLUMN_QUANTCAPITULOLIVRO = "quantcapitulolivro";
     public static final String COLUMN_QUANTPAGINA = "quantpagina";
     public static final String COLUMN_GENEROLIVRO = "generolivro";
+    public static final String COLUMN_DATACOMPRA = "datacompra";
 
     //Criando tabela
 
@@ -32,12 +33,13 @@ public class Livros_model {
             + COLUMN_PAISORIGEM             + "TEXT,"
             + COLUMN_QUANTCAPITULOLIVRO     + "INTEGER,"
             + COLUMN_QUANTPAGINA            + "INTEGER,"
-            + COLUMN_GENEROLIVRO            + "TEXT, )";
+            + COLUMN_GENEROLIVRO            + "TEXT,"
+            + COLUMN_DATACOMPRA             + "TEXT, )";
 
     private int id;
     private String titulo, autor, editora, edicao, paisorigem, generolivro;
     private String quantcapitulolivro, quantpagina;
-    private Date datalancamentolivro;
+    private Date datalancamentolivro, datacompra;
 
     public int getId () { return id; }
     public void setId (int id) { this.id = id; }
@@ -68,6 +70,9 @@ public class Livros_model {
 
     public String getGenerolivro () {return generolivro;}
     public void setGenerolivro (String generolivro) {this.generolivro = generolivro;}
+
+    public Date getDatacompra () { return datacompra;}
+    public void setDatacompra (Date datacompra) {this.datacompra = datacompra;}
 
 
 }

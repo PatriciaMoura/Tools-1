@@ -38,8 +38,30 @@ public class Livro_Controller extends BaseController <Livros_model> {
         columnId = c.getColumnIndex(Livros_model.COLUMN_AUTOR);
         livros_model.setAutor(c.getString(columnId));
 
+        columnId = c.getColumnIndex(Livros_model.COLUMN_DATALANCAMENTOLIVRO);
+        livros_model.setDatalancamentolivro(DateUtil.stringToDate(c.getString(columnId)));
+
         columnId = c.getColumnIndex(Livros_model.COLUMN_EDITORA);
         livros_model.setEditora(c.getString(columnId));
+
+        columnId = c.getColumnIndex(Livros_model.COLUMN_EDICAO);
+        livros_model.setEdicao(c.getString(columnId));
+
+        columnId = c.getColumnIndex(Livros_model.COLUMN_PAISORIGEM);
+        livros_model.setPaisorigem(c.getString(columnId));
+
+        columnId = c.getColumnIndex(Livros_model.COLUMN_QUANTCAPITULOLIVRO);
+        livros_model.setQuantcapitulolivro(c.getString(columnId));
+
+        columnId = c.getColumnIndex(Livros_model.COLUMN_QUANTPAGINA);
+        livros_model.setQuantpagina(c.getString(columnId));
+
+        columnId = c.getColumnIndex(Livros_model.COLUMN_GENEROLIVRO);
+        livros_model.setGenerolivro(c.getString(columnId));
+
+        columnId = c.getColumnIndex(Livros_model.COLUMN_DATACOMPRA);
+        livros_model.setDatacompra(DateUtil.stringToDate(c.getString(columnId)));
+
 
         return livros_model;
     }
@@ -47,7 +69,9 @@ public class Livro_Controller extends BaseController <Livros_model> {
     @Override
     protected String[] getColumns(){
         return new String[]{Livros_model.COLUMN_ID, Livros_model.COLUMN_TITULO, Livros_model.COLUMN_AUTOR,
-                Livros_model.COLUMN_EDITORA};
+                Livros_model.COLUMN_DATALANCAMENTOLIVRO, Livros_model.COLUMN_EDITORA, Livros_model.COLUMN_EDICAO,
+                Livros_model.COLUMN_PAISORIGEM, Livros_model.COLUMN_QUANTCAPITULOLIVRO, Livros_model.COLUMN_QUANTPAGINA,
+                Livros_model.COLUMN_GENEROLIVRO, Livros_model.COLUMN_DATACOMPRA};
     }
 
     protected ContentValues convertToContentValue(Livros_model livros_model) {
@@ -55,7 +79,15 @@ public class Livro_Controller extends BaseController <Livros_model> {
 
         values.put(Livros_model.COLUMN_TITULO, livros_model.getTitulo());
         values.put(Livros_model.COLUMN_AUTOR, livros_model.getAutor());
+        values.put(Livros_model.COLUMN_DATALANCAMENTOLIVRO, DateUtil.dateToString(livros_model.getDatalancamentolivro()));
         values.put(Livros_model.COLUMN_EDITORA, livros_model.getEditora());
+        values.put(Livros_model.COLUMN_EDICAO, livros_model.getEdicao());
+        values.put(Livros_model.COLUMN_PAISORIGEM, livros_model.getPaisorigem());
+        values.put(Livros_model.COLUMN_QUANTCAPITULOLIVRO, livros_model.getQuantcapitulolivro());
+        values.put(Livros_model.COLUMN_QUANTPAGINA, livros_model.getEditora());
+        values.put(Livros_model.COLUMN_GENEROLIVRO, livros_model.getEditora());
+        values.put(Livros_model.COLUMN_DATACOMPRA, livros_model.getEditora());
+
 
         return values;
     }
