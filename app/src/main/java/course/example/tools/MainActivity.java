@@ -12,7 +12,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Intent intent;
-    Button btnFichaMedica, btnViagens, btnSpeech, btnMusica, btnGames, btnLivros, btnFilmes, btnSeries;
+    Button btnFichaMedica, btnViagens, btnDispositivos, btnMusica, btnGames, btnLivros, btnFilmes, btnSeries;
 
 
     protected void onCreated (Bundle saveInstanceState){
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnViagens = (Button) findViewById(R.id.btnIMC);
         btnViagens.setOnClickListener(this);
 
-        btnSpeech = (Button) findViewById(R.id.btnSpeech);
-        btnSpeech.setOnClickListener(this);
+        btnDispositivos = (Button) findViewById(R.id.btnSpeech);
+        btnDispositivos.setOnClickListener(this);
 
         btnMusica = (Button) findViewById(R.id.btnCalculadora);
         btnMusica.setOnClickListener(this);
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(intent);
                     break;
 
-                case R.id.btnSpeech:
-                    intent = new Intent(MainActivity.this, SpeechToText.class);
+                case R.id.btnDispositivos:
+                    intent = new Intent(MainActivity.this, Dispositivos_Controller.class);
                     startActivity(intent);
                     break;
 

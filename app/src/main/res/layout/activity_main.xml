@@ -25,11 +25,11 @@
         tools:layout_editor_absoluteY="64dp" />
 
     <Button
-        android:id="@+id/btnSpeech"
+        android:id="@+id/btnDispositivos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:text="SpeechToText"
+        android:text="Dispositivos"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="128dp" />
 

@@ -16,16 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".View.FichaMedica_View" />
         <activity android:name=".SpeechToText" />
         <activity android:name=".ListaCadastros" />
         <activity android:name=".View.Filmes_View" />
         <activity android:name=".View.Musica_View" />
-        <activity android:name=".View.Games_View"/>
-        <activity android:name=".View.Livros_View"/>
-        <activity android:name=".View.Series_View"/>
-        <activity android:name=".View.Viagens_View"/>
+        <activity android:name=".View.Games_View" />
+        <activity android:name=".View.Livros_View" />
+        <activity android:name=".View.Series_View" />
+        <activity android:name=".View.Viagens_View" />
+        <activity android:name=".Dispositivos_Controller"></activity>
     </application>
 
 </manifest>
