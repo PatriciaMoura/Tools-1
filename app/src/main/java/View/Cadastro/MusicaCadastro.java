@@ -200,7 +200,7 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
 
     @Override
     public void onDismiss(DialogInterface dialogInterface) {
-        musica_model.closeDb();
+        musicaController.closeDb();
     }
 
 

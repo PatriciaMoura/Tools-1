@@ -201,7 +201,7 @@ public class GamesCadastro implements DialogInterface.OnShowListener, View.OnCli
 
     @Override
     public void onDismiss(DialogInterface dialogInterface) {
-        games_model.closeDb();
+        gamesController.closeDb();
     }
 
 

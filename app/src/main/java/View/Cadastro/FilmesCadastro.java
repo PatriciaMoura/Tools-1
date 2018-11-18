@@ -28,7 +28,7 @@ public class FilmesCadastro implements DialogInterface.OnShowListener, View.OnCl
 
     private AlertDialog dialog;
     private EditText editTextNomeFilme, editTextDiretorFilme, editTextDataLancamentoFilme, editTextAtrizPrincipalFilme, editTextAtorPrincipalFilme;
-    private EditText editTextClassificacaoFilme, editTextProdutoraFilme, editTextMusicaTema, editTextDuracao, editTextedtGeneroFilme;
+    private EditText editTextClassificacaoFilme, editTextProdutoraFilme, editTextMusicaTema, editTextDuracao, editTextGeneroFilme;
 
 
     private List<String> listaNomeFilmes = new ArrayList<String>();
@@ -59,7 +59,7 @@ public class FilmesCadastro implements DialogInterface.OnShowListener, View.OnCl
         editTextAtorPrincipalFilme = (EditText) view.findViewById(R.id.edtAtorPrincipalFilme);
         editTextClassificacaoFilme = (EditText) view.findViewById(R.id.edtClassificacaoFilme);
         editTextProdutoraFilme = (EditText) view.findViewById(R.id.edtProdutoraFilme);
-        editTextedtGeneroFilme = (EditText) view.findViewById(R.id.edtGeneroFilme);
+        editTextGeneroFilme = (EditText) view.findViewById(R.id.edtGeneroFilme);
         editTextMusicaTema = (EditText) view.findViewById(R.id.edtMusicaTema);
         editTextDuracao = (EditText) view.findViewById(R.id.edtDuracao);
 
@@ -88,7 +88,7 @@ public class FilmesCadastro implements DialogInterface.OnShowListener, View.OnCl
         editTextAtorPrincipalFilme.setText(filmes_model.getAtorprincipalfilme());
         editTextClassificacaoFilme.setText(filmes_model.getClassificacaofilme());
         editTextProdutoraFilme.setText(filmes_model.getProdutorafilme());
-        editTextedtGeneroFilme.setText(filmes_model.getGenerofilme());
+        editTextGeneroFilme.setText(filmes_model.getGenerofilme());
         editTextMusicaTema.setText(filmes_model.getMusicatema());
         editTextDuracao.setText(filmes_model.getDuracao());
 
@@ -127,7 +127,7 @@ public class FilmesCadastro implements DialogInterface.OnShowListener, View.OnCl
         String filmeAtorPrincipal = editTextAtorPrincipalFilme.getText().toString();
         String filmeClassificacao = editTextClassificacaoFilme.getText().toString();
         String filmeProdutora = editTextProdutoraFilme.getText().toString();
-        String filmeGenero = editTextedtGeneroFilme.getText().toString();
+        String filmeGenero = editTextGeneroFilme.getText().toString();
         String filmeMusicaTema = editTextMusicaTema.getText().toString();
         String filmeDuracao = editTextDuracao.getText().toString();
 
@@ -146,14 +146,14 @@ public class FilmesCadastro implements DialogInterface.OnShowListener, View.OnCl
             editTextClassificacaoFilme.setError("Digite a Classificação do Filme!");
         if (editTextProdutoraFilme.length() == 0)
             editTextProdutoraFilme.setError("Digite a Produtora do Filme!");
-        if (editTextedtGeneroFilme.length() == 0)
-            editTextedtGeneroFilme.setError("Digite o Gênero!");
+        if (editTextGeneroFilme.length() == 0)
+            editTextGeneroFilme.setError("Digite o Gênero!");
         if (editTextMusicaTema.length() == 0)
             editTextMusicaTema.setError("Digite a Música Tema!");
         if (editTextDuracao.length() == 0)
             editTextDuracao.setError("Digite a Duração do Filme!");
 
-        //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTÁ AÇÃO
+        //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTA AÇÃO
         if (filmeNome.length() != 0 && filmeDiretor.length() != 0 && filmeDataLancamento.length() != 0
                 && filmeAtrizPrincipal.length() != 0 && filmeAtorPrincipal.length() != 0
                 && filmeClassificacao.length() != 0 && filmeProdutora.length() != 0

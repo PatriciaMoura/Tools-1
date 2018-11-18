@@ -204,7 +204,7 @@ public class LivrosCadastro implements DialogInterface.OnShowListener, View.OnCl
 
     @Override
     public void onDismiss(DialogInterface dialogInterface) {
-        livros_model.closeDb();
+        livroController.closeDb();
     }
 
 
