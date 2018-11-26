@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,7 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import View.Cadastro.GamesCadastro;
+import view.cadastro.GamesCadastro;
 import course.example.tools.Games_Controller;
 import model.Games_model;
 import model.Livros_model;

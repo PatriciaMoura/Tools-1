@@ -1,21 +1,18 @@
-package View.Cadastro;
+package view.cadastro;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import model.DateUtil;
 import model.Dispositivos_model;
 import course.example.tools.Dispositivos_Controller;
-import View.Disposistivos_View;
+import view.Disposistivos_View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,7 +99,7 @@ public class DispositivosCadastro implements DialogInterface.OnShowListener, Vie
     @Override
     public void onClick(View v){
 
-        insertFilme();
+        insertDispositivo();
 
         if (criadoComSucesso) {
             Toast.makeText(context, "Armazenado Com Sucesso.", Toast.LENGTH_SHORT).show();

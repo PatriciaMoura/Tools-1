@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import View.Cadastro.FilmesCadastro;
+import view.cadastro.FilmesCadastro;
 import course.example.tools.Filmes_Controller;
 import model.Filmes_model;
 

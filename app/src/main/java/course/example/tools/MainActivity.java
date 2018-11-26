@@ -12,20 +12,20 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Intent intent;
-    Button btnFichaMedica, btnViagens, btnDispositivos, btnMusica, btnGames, btnLivros, btnFilmes, btnSeries;
+    Button btnDadosPessoais, btnViagens, btnDispositivos, btnMusica, btnGames, btnLivros, btnFilmes, btnSeries;
 
 
     protected void onCreated (Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnFichaMedica = (Button) findViewById(R.id.btnFichaMedica);
-        btnFichaMedica.setOnClickListener(this);
+        btnDadosPessoais = (Button) findViewById(R.id.btnDadosPessoais);
+        btnDadosPessoais.setOnClickListener(this);
 
         btnViagens = (Button) findViewById(R.id.btnIMC);
         btnViagens.setOnClickListener(this);
 
-        btnDispositivos = (Button) findViewById(R.id.btnSpeech);
+        btnDispositivos = (Button) findViewById(R.id.btnDispositivos);
         btnDispositivos.setOnClickListener(this);
 
         btnMusica = (Button) findViewById(R.id.btnCalculadora);
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             switch (view.getId()){
 
-                case R.id.btnFichaMedica:
-                    intent = new Intent(MainActivity.this, Ficha_Medica_Controller.class);
+                case R.id.btnDadosPessoais:
+                    intent = new Intent(MainActivity.this, DadosPessoais_Controller.class);
                     startActivity(intent);
                     break;
 

@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Ficha_Medica_Controller"
-    tools:showIn="@layout/activity_ficha__medica">
-
+    tools:context=".DadosPessoais_Controller">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -26,7 +23,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ficha Médica"
+                android:text="Dados Pessoais"
                 android:typeface="sans"
                 android:textSize="15sp"
                 android:gravity="center"/>

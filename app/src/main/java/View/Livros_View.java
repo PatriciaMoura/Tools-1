@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,7 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import View.Cadastro.LivrosCadastro;
+import view.cadastro.LivrosCadastro;
 import course.example.tools.Livro_Controller;
 import model.Livros_model;
 

@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,21 +17,18 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import course.example.tools.R;
+import view.cadastro.DadosPessoaisCadastro;
+import course.example.tools.DadosPessoais_Controller;
+import model.DadosPessoais_model;
 
-import View.Cadastro.FichaMedicaCadastro;
-import course.example.tools.Ficha_Medica_Controller;
-
-import model.Ficha_Medica;
-
-public class FichaMedica_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
+public class DadosPessoais_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
 
     private ListView listView;
     private EditText editText;
     ArrayAdapter<String> adapter;
-    List<Ficha_Medica> fichaMedicaList; // é a classe model
-    private List<String> fichaMedicaListNome = new ArrayList<String>();
-    private Ficha_Medica_Controller fichaMedicaController;
+    List<DadosPessoais_model> dadospessoaisList; // é a classe model
+    private List<String> dadospessoaisListNome = new ArrayList<String>();
+    private DadosPessoais_Controller dadosPessoaisController;
     private ImageView imageView;
 
     @Override
@@ -43,7 +40,7 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
         editText = (EditText) findViewById(R.id.editTextPesquisar);
         imageView = (ImageView) findViewById(R.id.imgViewAdd);
 
-        fichaMedicaController = new Ficha_Medica_Controller(this);
+        dadosPessoaisController = new DadosPessoais_Controller(this);
         listView.setOnItemClickListener(this);
 
         imageView.setOnClickListener(this);
@@ -57,7 +54,7 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                FichaMedica_View.this.adapter.getFilter().filter(charSequence);
+                Disposistivos_View.this.adapter.getFilter().filter(charSequence);
             }
 
             @Override
@@ -70,24 +67,24 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
     @Override
     public void onClick(View view) {
 
-        FichaMedicaCadastro fichaMedica  = new FichaMedicaCadastro(this);
+        DadosPessoaisCadastro dadosPessoaisCadastro  = new DadosPessoaisCadastro(this);
     }
 
     public void atualizarRegistros() {
 
-        fichaMedicaListNome.clear();
+        dadospessoaisListNome.clear();
 
-        fichaMedicaList = fichaMedicaController.getAll();
+        dadospessoaisList = dadosPessoaisController.getAll();
 
-        for (Ficha_Medica fichaMedica : fichaMedicaList)
-            fichaMedicaListNome.add(fichaMedica.getNome() + " " + fichaMedica.getRg() + " - CPF: " + fichaMedica.getCpf());
+        for (DadosPessoais_model dadosPessoaisModel : dadospessoaisList)
+            dadospessoaisListNome.add(dadosPessoaisModel.getNome() + " " + dadosPessoaisModel.getRg() + " - CPF: " + dadosPessoaisModel.getCpf());
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fichaMedicaListNome);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dadospessoaisListNome);
         listView.setAdapter(adapter);
 
     }
 
-    public void alertDialog(final Ficha_Medica fichaMedica){
+    public void alertDialog(final DadosPessoais_model dadosPessoaisModel){
 
         final CharSequence[] itens = {"editar","deletar"};
 
@@ -99,19 +96,19 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
                         if (item == 0){
                             //EDITAR
 
-                            FichaMedicaCadastro fichaMedicaCadastro = new FichaMedicaCadastro(FichaMedica_View.this);
-                            fichaMedicaCadastro.loadFichaMedica(fichaMedica);
+                            DadosPessoaisCadastro dadosPessoaisCadastro = new DadosPessoaisCadastro(DadosPessoais_View.this);
+                            dadosPessoaisCadastro.loadDadosPessoais(dadosPessoaisModel);
 
                         }else if (item == 1) {
                             //DELETAR
-                            boolean isDeletouComSucesso = fichaMedicaController.delete(fichaMedica.getId());
+                            boolean isDeletouComSucesso = dadosPessoaisController.delete(dadosPessoaisModel.getId());
 
                             if (isDeletouComSucesso){
-                                Toast.makeText(FichaMedica_View.this, "Deletado.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DadosPessoais_View.this, "Deletado.", Toast.LENGTH_SHORT).show();
                                 atualizarRegistros();
 
                             }else{
-                                Toast.makeText(FichaMedica_View.this, "Erro ao deletar.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DadosPessoais_View.this, "Erro ao deletar.", Toast.LENGTH_SHORT).show();
                             }
                         }
                         dialogInterface.dismiss();
@@ -124,9 +121,10 @@ public class FichaMedica_View extends Activity implements View.OnClickListener, 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Ficha_Medica fichaMedica = fichaMedicaList.get(i);
-        alertDialog(fichaMedica);
+        DadosPessoais_model dadosPessoaisModel = dadospessoaisList.get(i);
+        alertDialog(dadosPessoaisModel);
 
     }
+
 
 }

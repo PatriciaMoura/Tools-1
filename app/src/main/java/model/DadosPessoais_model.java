@@ -1,10 +1,12 @@
 package model;
 
-public class Ficha_Medica extends Pessoa {
+import java.util.Date;
+
+public class DadosPessoais_model extends Pessoa {
 
     //Nome tabela
 
-    public static final String TABLE = "ficha_medica";
+    public static final String TABLE = "DadosPessoais";
 
     //Nome colunas
 
@@ -25,6 +27,7 @@ public class Ficha_Medica extends Pessoa {
 
     public double getAltura () {return altura;}
     public void setAltura (double altura) {this.altura = altura;}
+
 
 
 }

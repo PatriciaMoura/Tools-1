@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,7 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import View.Cadastro.DispositivosCadastro;
+import view.cadastro.DispositivosCadastro;
 import course.example.tools.Dispositivos_Controller;
 import model.Dispositivos_model;
 
