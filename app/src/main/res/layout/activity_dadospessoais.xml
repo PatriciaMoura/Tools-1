@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DadosPessoais_Controller">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -226,7 +225,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tipo Sanguíneo:"
                 android:typeface="sans"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:layout_weight="2"/>
 
             <EditText
@@ -265,4 +264,6 @@
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

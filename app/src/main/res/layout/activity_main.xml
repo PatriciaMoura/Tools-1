@@ -1,82 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="horizontal">
+    android:animationCache="false"
+    android:baselineAligned="false"
+    android:baselineAlignedChildIndex="@android:integer/config_longAnimTime"
+    android:orientation="vertical"
+    tools:context="com.example.patricia.cad.MainActivity">
 
-
-    <Button
-        android:id="@+id/btnDadosPessoais"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Dados Pessoais" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnViagens"
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:src="@drawable/cadastro_img2"
+            android:layout_weight="1"
+            android:layout_marginTop="@android:dimen/app_icon_size"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Viagens"
+        android:layout_marginTop="150dp">
+
+
+        <Button
+            android:id="@+id/btnCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Cadastro Geral" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="64dp" />
+        tools:layout_editor_absoluteY="386dp">
 
-    <Button
-        android:id="@+id/btnDispositivos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Dispositivos"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="128dp" />
+        <Button
+            android:id="@+id/btnEspecificacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Cadastro Especificações" />
 
-    <Button
-        android:id="@+id/btnMusica"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Música"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="191dp" />
+    </LinearLayout>
 
-
-    <Button
-        android:id="@+id/btnGames"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Games"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="257dp" />
-
-    <Button
-        android:id="@+id/btnLivros"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Livros"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <Button
-        android:id="@+id/btnFilmes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Filmes"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="379dp" />
-
-    <Button
-        android:id="@+id/btnSeries"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Séries"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="439dp" />
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

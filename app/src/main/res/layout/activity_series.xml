@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Series_Controller">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
         android:orientation="vertical"
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingRight="10dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -201,17 +201,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gênero:"
+                android:text="Genero:"
                 android:typeface="sans"
                 android:textSize="17sp"
-                android:layout_weight="1"/>
+                android:layout_weight="2"/>
 
-            <EditText
-                android:id="@+id/edtGeneroSerie"
+            <Spinner
+                android:id="@+id/spnGeneroId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="text"/>
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
@@ -234,7 +233,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -256,11 +255,12 @@
                 android:id="@+id/edtQuantCapitulosSeries"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="number"/>
+                android:layout_weight="1"
+                android:inputType="number"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+    </ScrollView>
