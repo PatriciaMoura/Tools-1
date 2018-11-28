@@ -5,6 +5,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Created by Patricia on 23/11/2018.
+ */
+
+
 public class DateUtil {
 
     private static final String FORMAT_DEFAULT = "dd-MM-yyyy";

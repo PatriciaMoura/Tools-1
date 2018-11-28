@@ -5,23 +5,29 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
-
-import model.DateUtil;
-import view.FilmesView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import model.DateUtil;
+import model.Genero_model;
 import model.Series_model;
-import course.example.tools.Series_Controller;
+import view.Series_View;
+
+import com.example.patricia.cad.Genero_Controller;
+import com.example.patricia.cad.R;
+import com.example.patricia.cad.Series_Controller;
 
 public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnClickListener, DialogInterface.OnDismissListener{
 
     private Series_Controller seriesController;
-
+    private Genero_Controller generoController;
     private Series_model series_model;
 
     private AlertDialog dialog;
@@ -29,8 +35,10 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
     private EditText editTextClassificacaoSerie, editTextProdutoraSerie, editTextQuantTemp, editTextQuantCapit, editTextedtGeneroSerie;
 
 
-    private List<String> listaNomeSeries = new ArrayList<String>();
-    List<FilmesView> listSeries;
+    private Spinner spnIdGenero;
+    private int generoid;
+    private List<String> listaNomeGenero = new ArrayList<String>();
+    List<Genero_model> listObjGenero;
 
 
     Context context;
@@ -54,14 +62,21 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
         editTextDiretorSerie = (EditText) view.findViewById(R.id.edtDiretorSerie);
         editTextDataLancamentoSerie = (EditText) view.findViewById(R.id.edtDataLancamentoSerie);
         editTextAtrizPrincipalSerie = (EditText) view.findViewById(R.id.edtAtrizPrincipalSerie);
-        editTextAtorPrincipalserie = (EditText) view.findViewById(R.id.edtAtorPrincipalserie);
+        editTextAtorPrincipalserie = (EditText) view.findViewById(R.id.edtAtorPrincipalSerie);
         editTextClassificacaoSerie = (EditText) view.findViewById(R.id.edtClassificacaoSerie);
-        editTextProdutoraSerie = (EditText) view.findViewById(R.id.edtProdutoraserie);
-        editTextedtGeneroSerie = (EditText) view.findViewById(R.id.edtGeneroserie);
+        editTextProdutoraSerie = (EditText) view.findViewById(R.id.edtProdutoraSerie);
         editTextQuantTemp = (EditText) view.findViewById(R.id.edtQuantTemporadas);
         editTextQuantCapit = (EditText) view.findViewById(R.id.edtQuantCapitulosSeries);
 
+        spnIdGenero = (Spinner) view.findViewById(R.id.spnGeneroId);
 
+        generoController = new Genero_Controller(context);
+        arrayIdGenero();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, listaNomeGenero);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnIdGenero.setAdapter(adapter);
+        spnIdGeneroItemSelected(adapter);
 
 
         //CRIA OS BUTTONS DO ALERTDIALOG
@@ -73,7 +88,13 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
         dialog.show();
     }
 
+    private void arrayIdGenero() {
 
+        listObjGenero = generoController.getAll();
+        for (Genero_model genero : listObjGenero)
+            listaNomeGenero.add(genero.getNomegenero() );
+
+    }
 
     public void loadSeries (Series_model series_model){
 
@@ -84,12 +105,21 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
         editTextDataLancamentoSerie.setText(DateUtil.dateToString(series_model.getDatalancamentoserie()));
         editTextAtrizPrincipalSerie.setText(series_model.getAtrizprincipalserie());
         editTextAtorPrincipalserie.setText(series_model.getAtorprincipalserie());
-        editTextClassificacaoSerie.setText(series_model.getClassificacaoserie());
+        editTextClassificacaoSerie.setText(String.valueOf(series_model.getClassificacaoserie()));
         editTextProdutoraSerie.setText(series_model.getProdutoraserie());
-        editTextedtGeneroSerie.setText(series_model.getGeneroserie());
-        editTextQuantTemp.setText(series_model.getQuanttemporadas());
-        editTextQuantCapit.setText(series_model.getQuantcapitulosserie());
+        spnIdGenero.setSelection(getIndexGeneroId(series_model.getIdGenero()));
+        editTextQuantTemp.setText(String.valueOf(series_model.getQuanttemporadas()));
+        editTextQuantCapit.setText(String.valueOf(series_model.getQuantcapitulosserie()));
 
+    }
+
+    private int getIndexGeneroId(int idMedico) {
+        for (int index = 0; index < listObjGenero.size(); index++){
+            Genero_model medico = listObjGenero.get(index);
+            if (idMedico == medico.getId())
+                return index;
+        }
+        return 0;
     }
 
     @Override
@@ -102,15 +132,14 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
     @Override
     public void onClick(View v){
 
-        insertSerie();
+        insertSerie ();
 
         if (criadoComSucesso) {
             Toast.makeText(context, "Série Armazenado Com Sucesso.", Toast.LENGTH_SHORT).show();
-            ((FilmesView) context).atualizarRegistros();
+            ((Series_View) context).atualizarRegistros();
         }
         else
-            Toast.makeText(context, "Não Foi Possivel Armazenar o Série.", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(context, "Não Foi Possivel Armazenar a Série.", Toast.LENGTH_SHORT).show();
         dialog.dismiss();
 
     }
@@ -125,7 +154,6 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
         String serieAtorPrincipal = editTextAtorPrincipalserie.getText().toString();
         String serieClassificacao = editTextClassificacaoSerie.getText().toString();
         String serieProdutora = editTextProdutoraSerie.getText().toString();
-        String serieGenero = editTextedtGeneroSerie.getText().toString();
         String serieQuantTemp = editTextQuantTemp.getText().toString();
         String serieQuantCapit = editTextQuantCapit.getText().toString();
 
@@ -144,8 +172,6 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
             editTextClassificacaoSerie.setError("Digite a Classificação da Série!");
         if (serieProdutora.length() == 0)
             editTextProdutoraSerie.setError("Digite a Produtora da Série!");
-        if (serieGenero.length() == 0)
-            editTextedtGeneroSerie.setError("Digite o Gênero!");
         if (serieQuantTemp.length() == 0)
             editTextQuantTemp.setError("Digite a Quant. de Temporadas!");
         if (serieQuantCapit.length() == 0)
@@ -155,7 +181,7 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
         if (serieNome.length() != 0 && serieDiretor.length() != 0 && serieDataLancamento.length() != 0
                 && serieAtrizPrincipal.length() != 0 && serieAtorPrincipal.length() != 0
                 && serieClassificacao.length() != 0 && serieProdutora.length() != 0
-                && serieGenero.length() != 0 && serieQuantTemp.length() != 0
+                && serieQuantTemp.length() != 0
                 && serieQuantCapit.length() != 0) {
 
             if (series_model == null){
@@ -169,13 +195,13 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
                 series_model.setNomeserie(serieNome);
                 series_model.setDiretorserie(serieDiretor);
                 series_model.setDatalancamentoserie(DateUtil.stringToDate(serieDataLancamento));
-                series_model.setAtrizprincipalserie(serieAtorPrincipal);
+                series_model.setAtrizprincipalserie(serieAtrizPrincipal);
                 series_model.setAtorprincipalserie(serieAtorPrincipal);
-                series_model.setClassificacaoserie(serieClassificacao);
+                series_model.setClassificacaoserie(classificacao);
                 series_model.setProdutoraserie(serieProdutora);
-                series_model.setGeneroserie(serieGenero);
-                series_model.setQuantTemporadas(serieQuantTemp);
-                series_model.setQuantcapitulosserie(serieQuantCapit);
+                series_model.setIdGenero(generoid);
+                series_model.setQuanttemporadas(quantTemp);
+                series_model.setQuantcapitulosserie(quantCapit);
 
                 criadoComSucesso = seriesController.insert(series_model);
             }else{
@@ -189,11 +215,11 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
                 series_model.setDatalancamentoserie(DateUtil.stringToDate(serieDataLancamento));
                 series_model.setAtrizprincipalserie(serieAtrizPrincipal);
                 series_model.setAtorprincipalserie(serieAtorPrincipal);
-                series_model.setClassificacaoserie(serieClassificacao);
+                series_model.setClassificacaoserie(classificacao);
                 series_model.setProdutoraserie(serieProdutora);
-                series_model.setGeneroserie(serieGenero);
-                series_model.setQuantTemporadas(serieQuantTemp);
-                series_model.setQuantcapitulosserie(serieQuantCapit);
+                series_model.setIdGenero(generoid);
+                series_model.setQuanttemporadas(quantTemp);
+                series_model.setQuantcapitulosserie(quantCapit);
 
                 seriesController.edit(series_model, series_model.getId());
                 criadoComSucesso = true;
@@ -206,4 +232,20 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
         seriesController.closeDb();
     }
 
+    private void spnIdGeneroItemSelected(ArrayAdapter<String> adapter) {
+
+        spnIdGenero.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Genero_model genero = listObjGenero.get(i);
+                generoid = genero.getId();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+    }
+
 }
+
+

@@ -1,4 +1,4 @@
-package course.example.tools;
+package com.example.patricia.cad;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -48,8 +48,8 @@ public class Filmes_Controller extends BaseController<Filmes_model> {
         columnId = c.getColumnIndex(Filmes_model.COLUMN_PRODUTORAFILME);
         filmes_model.setProdutorafilme(c.getString(columnId));
 
-        columnId = c.getColumnIndex(Filmes_model.COLUMN_GENEROFILME);
-        filmes_model.setGenerofilme(c.getString(columnId));
+        columnId = c.getColumnIndex(Filmes_model.COLUMN_IDGENERO);
+        filmes_model.setIdGenero(c.getInt(columnId));
 
         columnId = c.getColumnIndex(Filmes_model.COLUMN_MUSICATEMA);
         filmes_model.setMusicatema(c.getString(columnId));
@@ -65,7 +65,7 @@ public class Filmes_Controller extends BaseController<Filmes_model> {
     protected String[] getColumns() {
         return new String[]{Filmes_model.COLUMN_ID, Filmes_model.COLUMN_NOMEFILME, Filmes_model.COLUMN_DIRETORFILME, Filmes_model.COLUMN_DATALANCAMENTOFILME,
                 Filmes_model.COLUMN_ATRIZPRINCIPALFILME, Filmes_model.COLUMN_ATORPRINCIPALFILME, Filmes_model.COLUMN_CLASSIFICACAOFILME, Filmes_model.COLUMN_PRODUTORAFILME,
-                Filmes_model.COLUMN_GENEROFILME, Filmes_model.COLUMN_MUSICATEMA, Filmes_model.COLUMN_DURACAO};
+                Filmes_model.COLUMN_IDGENERO, Filmes_model.COLUMN_MUSICATEMA, Filmes_model.COLUMN_DURACAO};
     }
 
     protected ContentValues convertToContentValue(Filmes_model filmes_model) {
@@ -78,7 +78,7 @@ public class Filmes_Controller extends BaseController<Filmes_model> {
         values.put(Filmes_model.COLUMN_ATORPRINCIPALFILME, filmes_model.getAtorprincipalfilme());
         values.put(Filmes_model.COLUMN_CLASSIFICACAOFILME, filmes_model.getClassificacaofilme());
         values.put(Filmes_model.COLUMN_PRODUTORAFILME, filmes_model.getProdutorafilme());
-        values.put(Filmes_model.COLUMN_GENEROFILME, filmes_model.getGenerofilme());
+        values.put(Filmes_model.COLUMN_IDGENERO, filmes_model.getIdGenero());
         values.put(Filmes_model.COLUMN_MUSICATEMA, filmes_model.getMusicatema());
         values.put(Filmes_model.COLUMN_DURACAO, filmes_model.getDuracao());
 
@@ -96,3 +96,6 @@ public class Filmes_Controller extends BaseController<Filmes_model> {
     }
 
 }
+
+
+

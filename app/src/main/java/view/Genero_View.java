@@ -14,22 +14,23 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.patricia.cad.Genero_Controller;
+import com.example.patricia.cad.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import view.cadastro.DispositivosCadastro;
-import course.example.tools.Dispositivos_Controller;
-import model.Dispositivos_model;
+import model.Genero_model;
+import view.cadastro.GeneroCadastro;
 
-
-public class Disposistivos_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
+public class Genero_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView listView;
     private EditText editText;
     ArrayAdapter<String> adapter;
-    List<Dispositivos_model> dispositivosList;
-    private List<String> dispositvosListNome = new ArrayList<String>();
-    private Dispositivos_Controller dispositivosController;
+    List<Genero_model> generoList;
+    private List<String> generoListNome = new ArrayList<String>();
+    private Genero_Controller generoController;
     private ImageView imageView;
 
     @Override
@@ -41,7 +42,7 @@ public class Disposistivos_View extends Activity implements View.OnClickListener
         editText = (EditText) findViewById(R.id.editTextPesquisar);
         imageView = (ImageView) findViewById(R.id.imgViewAdd);
 
-        dispositivosController = new Dispositivos_Controller(this);
+        generoController = new Genero_Controller(this);
         listView.setOnItemClickListener(this);
 
         imageView.setOnClickListener(this);
@@ -55,7 +56,7 @@ public class Disposistivos_View extends Activity implements View.OnClickListener
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Disposistivos_View.this.adapter.getFilter().filter(charSequence);
+                Genero_View.this.adapter.getFilter().filter(charSequence);
             }
 
             @Override
@@ -68,48 +69,48 @@ public class Disposistivos_View extends Activity implements View.OnClickListener
     @Override
     public void onClick(View view) {
 
-        DispositivosCadastro dispositivosCadastro  = new DispositivosCadastro(this);
+        GeneroCadastro generoCadastro = new GeneroCadastro(this);
     }
 
     public void atualizarRegistros() {
 
-        dispositvosListNome.clear();
+        generoListNome.clear();
 
-        dispositivosList = dispositivosController.getAll();
+        generoList = generoController.getAll();
 
-        for (Dispositivos_model dispositivos_model : dispositivosList)
-            dispositvosListNome.add(dispositivos_model.getDispositivo() + " " + dispositivos_model.getMarca());
+        for (Genero_model filmes_model : generoList)
+            generoListNome.add(filmes_model.getNomegenero() + " " );
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dispositvosListNome);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, generoListNome);
         listView.setAdapter(adapter);
 
     }
 
-    public void alertDialog(final Dispositivos_model dispositivos_model){
+    public void alertDialog(final Genero_model genero_model) {
 
-        final CharSequence[] itens = {"editar","deletar"};
+        final CharSequence[] itens = {"editar", "deletar"};
 
         new AlertDialog.Builder(this).setTitle("Detalhes")
                 .setItems(itens, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int item) {
 
-                        if (item == 0){
+                        if (item == 0) {
                             //EDITAR
 
-                            DispositivosCadastro dispositivosCadastro = new DispositivosCadastro(Disposistivos_View.this);
-                            dispositivosCadastro.loadDispositivos(dispositivos_model);
+                            GeneroCadastro generoCadastro = new GeneroCadastro(Genero_View.this);
+                            generoCadastro.loadGenero(genero_model);
 
-                        }else if (item == 1) {
+                        } else if (item == 1) {
                             //DELETAR
-                            boolean isDeletouComSucesso = dispositivosController.delete(dispositivos_model.getId());
+                            boolean isDeletouComSucesso = generoController.delete(genero_model.getId());
 
-                            if (isDeletouComSucesso){
-                                Toast.makeText(Disposistivos_View.this, "Deletado.", Toast.LENGTH_SHORT).show();
+                            if (isDeletouComSucesso) {
+                                Toast.makeText(Genero_View.this, "Deletado.", Toast.LENGTH_SHORT).show();
                                 atualizarRegistros();
 
-                            }else{
-                                Toast.makeText(Disposistivos_View.this, "Erro ao deletar.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(Genero_View.this, "Erro ao deletato.", Toast.LENGTH_SHORT).show();
                             }
                         }
                         dialogInterface.dismiss();
@@ -122,11 +123,8 @@ public class Disposistivos_View extends Activity implements View.OnClickListener
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Dispositivos_model dispositivos_model = dispositivosList.get(i);
-        alertDialog(dispositivos_model);
+        Genero_model genero_model = generoList.get(i);
+        alertDialog(genero_model);
 
     }
-
-
-
 }

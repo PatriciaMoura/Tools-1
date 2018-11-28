@@ -1,7 +1,4 @@
-package course.example.tools;
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+package com.example.patricia.cad;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -101,3 +98,5 @@ public class Games_Controller extends BaseController<Games_model> {
     }
 
 }
+
+

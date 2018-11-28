@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Games_model;
-import course.example.tools.Games_Controller;
+import com.example.patricia.cad.Games_Controller;
+import com.example.patricia.cad.R;
 
 public class GamesCadastro implements DialogInterface.OnShowListener, View.OnClickListener, DialogInterface.OnDismissListener{
 
@@ -31,7 +32,7 @@ public class GamesCadastro implements DialogInterface.OnShowListener, View.OnCli
 
 
     private List<String> listaGames = new ArrayList<String>();
-    List<View.Viagens_View> listGames;
+    List<view.Games_View> listGames;
 
 
     Context context;
@@ -169,7 +170,7 @@ public class GamesCadastro implements DialogInterface.OnShowListener, View.OnCli
                 games_model.setModojogo(gamesModoJogo);
                 games_model.setPublicadora(gamesPublicadora);
                 games_model.setDesenvolvedora(gamesDesenvolvedora);
-                games_model.setQuantlancadagames(gamesQuantLancada);
+                games_model.setQuantlancadagames(QuantLancada);
                 games_model.setPlataformas(gamesPlataforma);
                 games_model.setMelhorfranquia(gamesMelhorFranquia);
 
@@ -185,7 +186,7 @@ public class GamesCadastro implements DialogInterface.OnShowListener, View.OnCli
                 games_model.setModojogo(gamesModoJogo);
                 games_model.setPublicadora(gamesPublicadora);
                 games_model.setDesenvolvedora(gamesDesenvolvedora);
-                games_model.setQuantlancadagames(gamesQuantLancada);
+                games_model.setQuantlancadagames(QuantLancada);
                 games_model.setPlataformas(gamesPlataforma);
                 games_model.setMelhorfranquia(gamesMelhorFranquia);
 

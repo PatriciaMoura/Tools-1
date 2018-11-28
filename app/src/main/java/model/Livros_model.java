@@ -2,11 +2,12 @@ package model;
 
 import java.util.Date;
 
+
 public class Livros_model {
 
     //Nome tabela
 
-    public static final String TABLE = "Livros";
+    public static final String TABLE = "livros";
 
     //Nome colunas
     public static final String COLUMN_ID = "_id";
@@ -23,18 +24,18 @@ public class Livros_model {
 
     //Criando tabela
 
-    public static final String SQL_CREATE = "CREATE TABLE" + TABLE + "( "
+    public static final String SQL_CREATE = "CREATE TABLE " + TABLE + "( "
             + COLUMN_ID                     + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_TITULO                 + "TEXT,"
-            + COLUMN_AUTOR                  + "TEXT,"
-            + COLUMN_DATALANCAMENTOLIVRO    + "TEXT,"
-            + COLUMN_EDITORA                + "TEXT,"
-            + COLUMN_EDICAO                 + "TEXT,"
-            + COLUMN_PAISORIGEM             + "TEXT,"
-            + COLUMN_QUANTCAPITULOLIVRO     + "INTEGER,"
-            + COLUMN_QUANTPAGINA            + "INTEGER,"
-            + COLUMN_GENEROLIVRO            + "TEXT,"
-            + COLUMN_DATACOMPRA             + "TEXT, )";
+            + COLUMN_TITULO                 + " TEXT,"
+            + COLUMN_AUTOR                  + " TEXT,"
+            + COLUMN_DATALANCAMENTOLIVRO    + " TEXT,"
+            + COLUMN_EDITORA                + " TEXT,"
+            + COLUMN_EDICAO                 + " TEXT,"
+            + COLUMN_PAISORIGEM             + " TEXT,"
+            + COLUMN_QUANTCAPITULOLIVRO     + " INTEGER,"
+            + COLUMN_QUANTPAGINA            + " INTEGER,"
+            + COLUMN_GENEROLIVRO            + " TEXT,"
+            + COLUMN_DATACOMPRA             + " TEXT)";
 
     private int id;
     private String titulo, autor, editora, edicao, paisorigem, generolivro;
@@ -73,6 +74,5 @@ public class Livros_model {
 
     public Date getDatacompra () { return datacompra;}
     public void setDatacompra (Date datacompra) {this.datacompra = datacompra;}
-
 
 }

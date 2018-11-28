@@ -11,8 +11,10 @@ import android.widget.Toast;
 
 import model.DateUtil;
 import model.Dispositivos_model;
-import course.example.tools.Dispositivos_Controller;
-import view.Disposistivos_View;
+import com.example.patricia.cad.Dispositivos_Controller;
+import com.example.patricia.cad.R;
+
+import view.Dispositivos_View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +31,7 @@ public class DispositivosCadastro implements DialogInterface.OnShowListener, Vie
 
 
     private List<String> listaNomeDispositivos = new ArrayList<String>();
-    List<Disposistivos_View> listDispositivos;
+    List<Dispositivos_View> listDispositivos;
 
 
     Context context;
@@ -80,11 +82,11 @@ public class DispositivosCadastro implements DialogInterface.OnShowListener, Vie
         editTextMarca.setText(dispositivos_model.getMarca());
         editTextDataLancamentoDisp.setText(DateUtil.dateToString(dispositivos_model.getColumnDatalancamentodisp()));
         editTextCor.setText(dispositivos_model.getCor());
-        editTextMemoria.setText(dispositivos_model.getMemoria());
-        editTextPixels.setText(dispositivos_model.getPixels());
+        editTextMemoria.setText(String.valueOf(dispositivos_model.getMemoria()));
+        editTextPixels.setText(String.valueOf(dispositivos_model.getPixels()));
         editTextLoja.setText(dispositivos_model.getLojacompra());
         editTextGarantia.setText(dispositivos_model.getGarantia());
-        editTextDivide.setText(dispositivos_model.getDivide());
+        editTextDivide.setText(String.valueOf(dispositivos_model.getDivide()));
         editTextSoftware.setText(dispositivos_model.getSoftware());
 
     }
@@ -103,7 +105,7 @@ public class DispositivosCadastro implements DialogInterface.OnShowListener, Vie
 
         if (criadoComSucesso) {
             Toast.makeText(context, "Armazenado Com Sucesso.", Toast.LENGTH_SHORT).show();
-            ((Disposistivos_View) context).atualizarRegistros();
+            ((Dispositivos_View) context).atualizarRegistros();
         }
         else
             Toast.makeText(context, "Não Foi Possivel Armazenar.", Toast.LENGTH_SHORT).show();
@@ -158,9 +160,9 @@ public class DispositivosCadastro implements DialogInterface.OnShowListener, Vie
             if (dispositivos_model == null){
 
                 //CONVERTER PARA O TIPO DE DADOS QUE SERÁ ARMAZENADOS NO BANCO DE DADOS
-                int dispMemoria = Integer.parseInt(editTextMemoria.getText().toString());
-                int dispPixels = Integer.parseInt(editTextPixels.getText().toString());
-                int dispDivide = Integer.parseInt(editTextDivide.getText().toString());
+                int Memoria = Integer.parseInt(editTextMemoria.getText().toString());
+                int Pixels = Integer.parseInt(editTextPixels.getText().toString());
+                int Divide = Integer.parseInt(editTextDivide.getText().toString());
 
                 Dispositivos_model dispositivos_model = new Dispositivos_model();
 
@@ -168,11 +170,11 @@ public class DispositivosCadastro implements DialogInterface.OnShowListener, Vie
                 dispositivos_model.setMarca(dispositivoMarca);
                 dispositivos_model.setDatalancamentodisp(DateUtil.stringToDate(dispositivoDataLanc));
                 dispositivos_model.setCor(dispositivoCor);
-                dispositivos_model.setMemoria(dispositivoMemoria);
-                dispositivos_model.setPixels(dispositivoPixels);
+                dispositivos_model.setMemoria(Memoria);
+                dispositivos_model.setPixels(Pixels);
                 dispositivos_model.setLojacompra(dispositivoLoja);
                 dispositivos_model.setGarantia(dispositivoGarantia);
-                dispositivos_model.setDivide(dispositivoDivide);
+                dispositivos_model.setDivide(Divide);
                 dispositivos_model.setSoftware(dispositivoSoftware);
 
                 criadoComSucesso = dispositivosController.insert(dispositivos_model);
@@ -186,11 +188,11 @@ public class DispositivosCadastro implements DialogInterface.OnShowListener, Vie
                 dispositivos_model.setMarca(dispositivoMarca);
                 dispositivos_model.setDatalancamentodisp(DateUtil.stringToDate(dispositivoDataLanc));
                 dispositivos_model.setCor(dispositivoCor);
-                dispositivos_model.setMemoria(dispositivoMemoria);
-                dispositivos_model.setPixels(dispositivoPixels);
+                dispositivos_model.setMemoria(dispMemoria);
+                dispositivos_model.setPixels(dispPixels);
                 dispositivos_model.setLojacompra(dispositivoLoja);
                 dispositivos_model.setGarantia(dispositivoGarantia);
-                dispositivos_model.setDivide(dispositivoDivide);
+                dispositivos_model.setDivide(dispDivide);
                 dispositivos_model.setSoftware(dispositivoSoftware);
 
                 dispositivosController.edit(dispositivos_model, dispositivos_model.getId());

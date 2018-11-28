@@ -1,7 +1,5 @@
 package view.cadastro;
 
-import course.example.tools.Livro_Controller;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,13 +9,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import view.Livros_View;
-import model.DateUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import model.DateUtil;
 import model.Livros_model;
+import view.Livros_View;
+import view.Viagens_View;
+
+import com.example.patricia.cad.Livro_Controller;
+import com.example.patricia.cad.R;
+
+/**
+ * Created by Patricia on 23/11/2018.
+ */
 
 public class LivrosCadastro implements DialogInterface.OnShowListener, View.OnClickListener, DialogInterface.OnDismissListener{
 
@@ -31,7 +36,7 @@ public class LivrosCadastro implements DialogInterface.OnShowListener, View.OnCl
 
 
     private List<String> listaViagens = new ArrayList<String>();
-    List<View.Viagens_View> listViagens;
+    List<Viagens_View> listViagens;
 
 
     Context context;
@@ -84,8 +89,8 @@ public class LivrosCadastro implements DialogInterface.OnShowListener, View.OnCl
         editTextEditora.setText(livros_model.getEditora());
         editTextEdicao.setText(livros_model.getEdicao());
         editTextPaisOrigem.setText(livros_model.getPaisorigem());
-        editTextQuantCapitulos.setText(livros_model.getQuantcapitulolivro());
-        editTextQuantPaginas.setText(livros_model.getQuantpagina());
+        editTextQuantCapitulos.setText(String.valueOf(livros_model.getQuantcapitulolivro()));
+        editTextQuantPaginas.setText(String.valueOf(livros_model.getQuantpagina()));
         editTextGeneroLivro.setText(livros_model.getGenerolivro());
         editTextDataCompra.setText(DateUtil.dateToString(livros_model.getDatacompra()));
 
@@ -163,19 +168,19 @@ public class LivrosCadastro implements DialogInterface.OnShowListener, View.OnCl
                 int QuantCapitulos = Integer.parseInt(editTextQuantCapitulos.getText().toString());
                 int QuantPaginas = Integer.parseInt(editTextQuantPaginas.getText().toString());
 
-                Livros_model viagens_model = new Livros_model();
+                Livros_model livros_model = new Livros_model();
                 livros_model.setTitulo(livrosTitulo);
                 livros_model.setAutor(livrosAutor);
                 livros_model.setDatalancamentolivro(DateUtil.stringToDate(livrosDataLancamento));
                 livros_model.setEditora(livrosEditora);
                 livros_model.setEdicao(livrosEdicao);
                 livros_model.setPaisorigem(livrosPaisOrigem);
-                livros_model.setQuantpagina(livrosQuantCapitulos);
                 livros_model.setQuantpagina(livrosQuantPaginas);
+                livros_model.setQuantcapitulolivro(livrosQuantCapitulos);
                 livros_model.setGenerolivro(livrosGenero);
                 livros_model.setDatacompra(DateUtil.stringToDate(livrosDataCompra));
 
-                criadoComSucesso = livroController.insert(viagens_model);
+                criadoComSucesso = livroController.insert(livros_model);
             }else{
                 //CONVERTER PARA O TIPO DE DADOS QUE SERÁ ARMAZENADOS NO BANCO DE DADOS
                 int QuantCapitulos = Integer.parseInt(editTextQuantCapitulos.getText().toString());

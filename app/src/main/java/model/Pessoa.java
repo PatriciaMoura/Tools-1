@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Pessoa {
 
-// Nome das colunas
+    // Nome das colunas
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NOME = "nome";
     public static final String COLUMN_RG = "RG";

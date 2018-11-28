@@ -2,11 +2,14 @@ package model;
 
 import java.util.Date;
 
-public class Filmes_model {
+/**
+ * Created by Patricia on 23/11/2018.
+ */
 
+public class Filmes_model {
     //Nome tabela
 
-    public static final String TABLE = "Filmes";
+    public static final String TABLE = "filmes";
 
     //Nome colunas
 
@@ -18,26 +21,27 @@ public class Filmes_model {
     public static final String COLUMN_ATRIZPRINCIPALFILME = "atrizprincipalfilme";
     public static final String COLUMN_CLASSIFICACAOFILME = "classificacaofilme";
     public static final String COLUMN_PRODUTORAFILME = "produtorafilme";
-    public static final String COLUMN_GENEROFILME = "generofilme";
+    public static final String COLUMN_IDGENERO = "id_genero";
     public static final String COLUMN_MUSICATEMA = "musicatema";
     public static final String COLUMN_DURACAO = "duracao";
 
     //Criando tabela
 
-    public static final String SQL_CREATE = "CREATE TABLE" + TABLE + "( "
+    public static final String SQL_CREATE = "CREATE TABLE " + TABLE + "( "
             + COLUMN_ID                     + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_NOMEFILME              + "TEXT,"
-            + COLUMN_DIRETORFILME           + "TEXT,"
-            + COLUMN_DATALANCAMENTOFILME    + "TEXT,"
-            + COLUMN_ATORPRINCIPALFILME     + "TEXT,"
-            + COLUMN_ATRIZPRINCIPALFILME    + "TEXT,"
-            + COLUMN_CLASSIFICACAOFILME     + "INTEGER,"
-            + COLUMN_PRODUTORAFILME         + "TEXT,"
-            + COLUMN_GENEROFILME            + "TEXT,"
-            + COLUMN_MUSICATEMA             + "TEXT,"
-            + COLUMN_DURACAO                + "INTEGER,)";
+            + COLUMN_NOMEFILME              + " TEXT,"
+            + COLUMN_DIRETORFILME           + " TEXT,"
+            + COLUMN_DATALANCAMENTOFILME    + " TEXT,"
+            + COLUMN_ATORPRINCIPALFILME     + " TEXT,"
+            + COLUMN_ATRIZPRINCIPALFILME    + " TEXT,"
+            + COLUMN_CLASSIFICACAOFILME     + " INTEGER,"
+            + COLUMN_PRODUTORAFILME         + " TEXT,"
+            + COLUMN_IDGENERO               + " INTEGER,"
+            + COLUMN_MUSICATEMA             + " TEXT,"
+            + COLUMN_DURACAO                + " INTEGER,"
+            + "FOREIGN KEY("+ COLUMN_IDGENERO +") REFERENCES " + Genero_model.TABLE + "(" +Genero_model.COLUMN_ID + "))";
 
-    private int id, classificacaofilme;
+    private int id, classificacaofilme, idGenero;
     private String nomefilme, diretorfilme, atorprincipalfilme, atrizprincipalfilme, produtorafilme, generofilme, musicatema;
     private Date datalancamentofilme;
     private String duracao;
@@ -63,9 +67,6 @@ public class Filmes_model {
     public String getProdutorafilme () {return produtorafilme;}
     public void setProdutorafilme (String produtorafilme) {this.produtorafilme = produtorafilme;}
 
-    public String getGenerofilme () {return generofilme;}
-    public void setGenerofilme (String generofilme) {this.generofilme = generofilme;}
-
     public Date getDatalancamentofilme () {return datalancamentofilme;}
     public void setDatalancamentofilme (Date datalancamentofilme) {this.datalancamentofilme = datalancamentofilme;}
 
@@ -75,6 +76,12 @@ public class Filmes_model {
     public String getDuracao () {return duracao;}
     public void setDuracao (String duracao) {this.duracao = duracao;}
 
+    public int getIdGenero() {
+        return idGenero;
+    }
+    public void setIdGenero(int idGenero) {
+        this.idGenero = idGenero;
+    }
+
 
 }
-

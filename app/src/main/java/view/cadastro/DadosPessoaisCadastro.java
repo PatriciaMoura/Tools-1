@@ -1,5 +1,6 @@
 package view.cadastro;
 
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,11 +13,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import view.DadosPessoais_View;
-import course.example.tools.DadosPessoais_Controller;
-import model.DateUtil;
 import model.DadosPessoais_model;
-
+import model.DateUtil;
+import view.DadosPessoais_View;
+import com.example.patricia.cad.DadosPessoais_Controller;
+import com.example.patricia.cad.R;
 
 public class DadosPessoaisCadastro implements DialogInterface.OnShowListener, View.OnClickListener, DialogInterface.OnDismissListener {
 
@@ -40,7 +41,7 @@ public class DadosPessoaisCadastro implements DialogInterface.OnShowListener, Vi
 
         //CRIA O LAYOUT COMO ALERTDIALOG
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.content_dadospessoais, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_dadospessoais, null);
         builder.setView(view);
 
         //ATRIBUI AS VARIVEIS AOS ITENS DO LAYOUT
@@ -194,9 +195,10 @@ public class DadosPessoaisCadastro implements DialogInterface.OnShowListener, Vi
 
     @Override
     public void onDismiss(DialogInterface dialogInterface) {
-        fichaMedicaController.closeDb();
+        dadosPessoaisController.closeDb();
     }
 
 
 
 }
+

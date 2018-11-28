@@ -1,5 +1,6 @@
 package view;
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -18,7 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import view.cadastro.LivrosCadastro;
-import course.example.tools.Livro_Controller;
+import com.example.patricia.cad.Livro_Controller;
+import com.example.patricia.cad.R;
+
 import model.Livros_model;
 
 public class Livros_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
@@ -128,3 +131,15 @@ public class Livros_View extends Activity implements View.OnClickListener, Adapt
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

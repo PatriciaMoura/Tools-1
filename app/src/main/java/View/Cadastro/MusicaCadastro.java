@@ -16,7 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Musica_model;
-import course.example.tools.Musica_Controller;
+import com.example.patricia.cad.Musica_Controller;
+import com.example.patricia.cad.R;
 
 public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnClickListener, DialogInterface.OnDismissListener{
 
@@ -30,7 +31,7 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
 
 
     private List<String> listaMusica = new ArrayList<String>();
-    List<View.Viagens_View> listMusica;
+    List<Musica_View> listMusica;
 
     Context context;
 
@@ -45,7 +46,7 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
 
         //CRIA O LAYOUT COMO ALERTDIALOG
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_games, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_musica, null);
         builder.setView(view);
 
         //ATRIBUI AS VARIVEIS AOS ITENS DO LAYOUT
@@ -78,7 +79,7 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
         editTextAlbum.setText(musica_model.getAlbum());
         editTextGeneroMusical.setText(musica_model.getGeneromusical());
         editTextDataLancamentoMusica.setText(DateUtil.dateToString(musica_model.getDatalancamentomusica()));
-        editTextQuantFaixas.setText(musica_model.getQuatfaixas());
+        editTextQuantFaixas.setText(String.valueOf(musica_model.getQuatfaixas()));
         editTextGravadora.setText(musica_model.getGravadoramusica());
         editTextProdutor.setText(musica_model.getProdutoramusica());
         editTextEstudio.setText(musica_model.getEstudio());
@@ -165,7 +166,7 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
                 musica_model.setAlbum(musicaAlbum);
                 musica_model.setGeneromusical(musicaGeneroMusical);
                 musica_model.setDatalancamentomusica(DateUtil.stringToDate(musicaDataLancamentoMusica));
-                musica_model.setQuantfaixas(musicaQuantFaixas);
+                musica_model.setQuantfaixas(QuantFaixas);
                 musica_model.setGravadoramusica(musicaGravadora);
                 musica_model.setProdutoramusica(musicaProdutor);
                 musica_model.setEstudio(musicaEstudio);
@@ -175,14 +176,13 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
                 criadoComSucesso = musicaController.insert(musica_model);
             }else{
                 //CONVERTER PARA O TIPO DE DADOS QUE SERÁ ARMAZENADOS NO BANCO DE DADOS
-                int QuantLancada = Integer.parseInt(editTextDataLancamentoMusica.getText().toString());
                 int QuantFaixas = Integer.parseInt(editTextQuantFaixas.getText().toString());
 
                 musica_model.setArtista(musicaArtista);
                 musica_model.setAlbum(musicaAlbum);
                 musica_model.setGeneromusical(musicaGeneroMusical);
                 musica_model.setDatalancamentomusica(DateUtil.stringToDate(musicaDataLancamentoMusica));
-                musica_model.setQuantfaixas(musicaQuantFaixas);
+                musica_model.setQuantfaixas(QuantFaixas);
                 musica_model.setGravadoramusica(musicaGravadora);
                 musica_model.setProdutoramusica(musicaProdutor);
                 musica_model.setEstudio(musicaEstudio);

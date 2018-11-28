@@ -1,5 +1,8 @@
 package view;
 
+/**
+ * Created by Patricia on 23/11/2018.
+ */
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -18,7 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import view.cadastro.SeriesCadastro;
-import course.example.tools.Series_Controller;
+
+import com.example.patricia.cad.R;
+import com.example.patricia.cad.Series_Controller;
 import model.Series_model;
 
 public class Series_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
@@ -77,7 +82,7 @@ public class Series_View extends Activity implements View.OnClickListener, Adapt
         seriesList = seriesController.getAll();
 
         for (Series_model series_model : seriesList)
-        seriesListNome.add(series_model.getNomeserie() + " " + series_model.getProdutoraserie());
+            seriesListNome.add(series_model.getNomeserie() + " " + series_model.getProdutoraserie());
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, seriesListNome);
         listView.setAdapter(adapter);
@@ -96,8 +101,8 @@ public class Series_View extends Activity implements View.OnClickListener, Adapt
                         if (item == 0){
                             //EDITAR
 
-                            SeriesCadastro fichaMedicaCadastro = new SeriesCadastro(Series_View.this);
-                            fichaMedicaCadastro.loadSeries(series_model);
+                            SeriesCadastro seriesCadastro = new SeriesCadastro(Series_View.this);
+                            seriesCadastro.loadSeries(series_model);
 
                         }else if (item == 1) {
                             //DELETAR
@@ -128,3 +133,4 @@ public class Series_View extends Activity implements View.OnClickListener, Adapt
 
 
 }
+

@@ -1,4 +1,4 @@
-package course.example.tools;
+package com.example.patricia.cad;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,63 +11,63 @@ import database.DataBaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * criado em 12/10/2018.
- */
+    /**
+     * criado em 12/10/2018.
+     */
 
-public abstract class BaseController<T> {
+    public abstract class BaseController<T> {
 
-    private DataBaseAdapter adapter;
-    protected SQLiteDatabase db;
+        private DataBaseAdapter adapter;
+        protected SQLiteDatabase db;
 
-    public BaseController(Context context){
+        public BaseController(Context context){
 
-        //INTEGRAÇÃO COM O BANCO
-        adapter = new DataBaseAdapter(context);
-        db = adapter.getWritableDatabase();
+            //INTEGRAÇÃO COM O BANCO
+            adapter = new DataBaseAdapter(context);
+            db = adapter.getWritableDatabase();
 
-    }
-
-    protected abstract String[] getColumns();
-
-    public List<T> getAll(){
-
-        Cursor c = db.query(getTable(), getColumns(), null, null, null, null, null);
-
-        List<T> objctlis = new ArrayList<T>();
-
-        if (c.moveToFirst()){
-            do {
-                T obj = convertToObject(c);
-                objctlis.add(obj);
-            } while (c.moveToNext());
         }
-        c.close();
 
-        return objctlis;
+        protected abstract String[] getColumns();
+
+        public List<T> getAll(){
+
+            Cursor c = db.query(getTable(), getColumns(), null, null, null, null, null);
+
+            List<T> objctlis = new ArrayList<T>();
+
+            if (c.moveToFirst()){
+                do {
+                    T obj = convertToObject(c);
+                    objctlis.add(obj);
+                } while (c.moveToNext());
+            }
+            c.close();
+
+            return objctlis;
+        }
+
+        protected abstract String getTable();
+
+        protected abstract String getColumnId();
+
+        protected abstract ContentValues convertToContentValue(T obj);
+
+        protected abstract T convertToObject(Cursor c);
+
+        public void closeDb(){
+            db.close();
+        }
+
+        public boolean delete(int id) {
+            boolean isDelete = false;
+            isDelete = db.delete(getTable(), getColumnId() +" ='" + id + "'", null) > 0;
+            return isDelete;
+        }
+
+        public void edit(T obj, int id){
+            ContentValues contentValues = convertToContentValue(obj);
+            db.update(getTable(), contentValues, getColumnId() + " =' " + id + "'",null);
+        }
+
     }
-
-    protected abstract String getTable();
-
-    protected abstract String getColumnId();
-
-    protected abstract ContentValues convertToContentValue(T obj);
-
-    protected abstract T convertToObject(Cursor c);
-
-    public void closeDb(){
-        db.close();
-    }
-
-    public boolean delete(int id) {
-        boolean isDelete = false;
-        isDelete = db.delete(getTable(), getColumnId() +" ='" + id + "'", null) > 0;
-        return isDelete;
-    }
-
-    public void edit(T obj, int id){
-        ContentValues contentValues = convertToContentValue(obj);
-        db.update(getTable(), contentValues, getColumnId() + " =' " + id + "'",null);
-    }
-
-}

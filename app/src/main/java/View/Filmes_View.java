@@ -15,15 +15,16 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import view.cadastro.FilmesCadastro;
-import course.example.tools.Filmes_Controller;
+import com.example.patricia.cad.Filmes_Controller;
+import com.example.patricia.cad.R;
+
 import model.Filmes_model;
 
-// import com.airam.helpfisio.view.cadastro.PacienteCadastro;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilmesView extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class Filmes_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView listView;
     private EditText editText;
@@ -36,7 +37,7 @@ public class FilmesView extends Activity implements View.OnClickListener, Adapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.consultalayout);
+        setContentView(R.layout.activity_consulta_layout);
 
         listView = (ListView) findViewById(R.id.listView);
         editText = (EditText) findViewById(R.id.editTextPesquisar);
@@ -56,7 +57,7 @@ public class FilmesView extends Activity implements View.OnClickListener, Adapte
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                FilmesView.this.adapter.getFilter().filter(charSequence);
+                Filmes_View.this.adapter.getFilter().filter(charSequence);
             }
 
             @Override
@@ -98,7 +99,7 @@ public class FilmesView extends Activity implements View.OnClickListener, Adapte
                         if (item == 0) {
                             //EDITAR
 
-                            FilmesCadastro filmesCadastro = new FilmesCadastro(FilmesView.this);
+                            FilmesCadastro filmesCadastro = new FilmesCadastro(Filmes_View.this);
                             filmesCadastro.loadFilmes(filmes_model);
 
                         } else if (item == 1) {
@@ -106,11 +107,11 @@ public class FilmesView extends Activity implements View.OnClickListener, Adapte
                             boolean isDeletouComSucesso = filmesController.delete(filmes_model.getId());
 
                             if (isDeletouComSucesso) {
-                                Toast.makeText(FilmesView.this, "Deletado.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Filmes_View.this, "Deletado.", Toast.LENGTH_SHORT).show();
                                 atualizarRegistros();
 
                             } else {
-                                Toast.makeText(FilmesView.this, "Erro ao deletato.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Filmes_View.this, "Erro ao deletato.", Toast.LENGTH_SHORT).show();
                             }
                         }
                         dialogInterface.dismiss();

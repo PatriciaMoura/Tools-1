@@ -1,7 +1,5 @@
-package course.example.tools;
+package com.example.patricia.cad;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -12,7 +10,7 @@ import model.DateUtil;
 import model.Viagens_model;
 
 
-public class Viagens_Controller extends BaseController<Viagens_model>{
+public class Viagens_Controller extends BaseController<Viagens_model> {
 
     public Viagens_Controller(Context context){
         super(context);
@@ -47,9 +45,6 @@ public class Viagens_Controller extends BaseController<Viagens_model>{
         columnId = c.getColumnIndex(Viagens_model.COLUMN_VALOR);
         viagens_model.setValor(c.getString(columnId));
 
-        columnId = c.getColumnIndex(Viagens_model.COLUMN_PARCELADO);
-        viagens_model.setParcelado(c.getInt(columnId));
-
         columnId = c.getColumnIndex(Viagens_model.COLUMN_HOTEL);
         viagens_model.setHotel(c.getString(columnId));
 
@@ -70,7 +65,7 @@ public class Viagens_Controller extends BaseController<Viagens_model>{
     @Override
     protected String[] getColumns() {
         return new String[]{Viagens_model.COLUMN_ID, Viagens_model.COLUMN_LOCAL, Viagens_model.COLUMN_DATAIDA, Viagens_model.COLUMN_DATAVOLTA,
-                Viagens_model.COLUMN_CIAAEREA, Viagens_model.COLUMN_VALOR, Viagens_model.COLUMN_PARCELADO, Viagens_model.COLUMN_HOTEL, Viagens_model.COLUMN_TRANSLADO,
+                Viagens_model.COLUMN_CIAAEREA, Viagens_model.COLUMN_VALOR, Viagens_model.COLUMN_HOTEL, Viagens_model.COLUMN_TRANSLADO,
                 Viagens_model.COLUMN_GUIA, Viagens_model.COLUMN_VISTO};
     }
 
@@ -82,7 +77,6 @@ public class Viagens_Controller extends BaseController<Viagens_model>{
         values.put(Viagens_model.COLUMN_DATAVOLTA, DateUtil.dateToString (viagens_model.getDatavolta()));
         values.put(Viagens_model.COLUMN_CIAAEREA, viagens_model.getCiaaerea());
         values.put(Viagens_model.COLUMN_VALOR, viagens_model.getValor());
-        values.put(Viagens_model.COLUMN_PARCELADO, viagens_model.getParcelado());
         values.put(Viagens_model.COLUMN_HOTEL, viagens_model.getHotel());
         values.put(Viagens_model.COLUMN_TRANSLADO, viagens_model.getTranslado());
         values.put(Viagens_model.COLUMN_GUIA, viagens_model.getGuia());
@@ -102,3 +96,4 @@ public class Viagens_Controller extends BaseController<Viagens_model>{
         return Viagens_model.COLUMN_ID;
     }
 }
+

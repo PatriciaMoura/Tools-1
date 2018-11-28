@@ -14,11 +14,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.patricia.cad.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import view.cadastro.DadosPessoaisCadastro;
-import course.example.tools.DadosPessoais_Controller;
+import com.example.patricia.cad.DadosPessoais_Controller;
 import model.DadosPessoais_model;
 
 public class DadosPessoais_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
@@ -54,7 +56,7 @@ public class DadosPessoais_View extends Activity implements View.OnClickListener
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Disposistivos_View.this.adapter.getFilter().filter(charSequence);
+                DadosPessoais_View.this.adapter.getFilter().filter(charSequence);
             }
 
             @Override
@@ -67,7 +69,7 @@ public class DadosPessoais_View extends Activity implements View.OnClickListener
     @Override
     public void onClick(View view) {
 
-        DadosPessoaisCadastro dadosPessoaisCadastro  = new DadosPessoaisCadastro(this);
+        DadosPessoaisCadastro dadosPessoaisCadastro  = new DadosPessoaisCadastro (this);
     }
 
     public void atualizarRegistros() {
@@ -128,3 +130,4 @@ public class DadosPessoais_View extends Activity implements View.OnClickListener
 
 
 }
+

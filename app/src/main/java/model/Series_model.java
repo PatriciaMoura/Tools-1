@@ -2,9 +2,13 @@ package model;
 
 import java.util.Date;
 
+/**
+ * Created by Patricia on 23/11/2018.
+ */
+
 public class Series_model {
 
-    public static final String TABLE = "Series";
+    public static final String TABLE = "series";
 
     //Nome colunas
 
@@ -16,26 +20,27 @@ public class Series_model {
     public static final String COLUMN_ATRIZPRINCIPALSERIE = "atrizprincipalserie";
     public static final String COLUMN_CLASSIFICACAOSERIE = "classificacaoserie";
     public static final String COLUMN_PRODUTORASERIE = "produtoraserie";
-    public static final String COLUMN_GENEROSERIE = "generoserie";
+    public static final String COLUMN_IDGENERO = "id_genero";
     public static final String COLUMN_QUANTTEMPORADAS = "qaunttemporadas";
     public static final String COLUMN_QUANTCAPITULOSSERIE = "quantcapitulossesie";
 
     //Criando tabela
 
-    public static final String SQL_CREATE = "CREATE TABLE" + TABLE + "( "
+    public static final String SQL_CREATE = "CREATE TABLE " + TABLE + "( "
             + COLUMN_ID                     + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_NOMESERIE              + "TEXT,"
-            + COLUMN_DIRETORSERIE           + "TEXT,"
-            + COLUMN_DATALANCAMENTOSERIE    + "TEXT,"
-            + COLUMN_ATORPRINCIPALSERIE     + "TEXT,"
-            + COLUMN_ATRIZPRINCIPALSERIE    + "TEXT,"
-            + COLUMN_CLASSIFICACAOSERIE     + "INTEGER,"
-            + COLUMN_PRODUTORASERIE         + "TEXT,"
-            + COLUMN_GENEROSERIE            + "TEXT,"
-            + COLUMN_QUANTTEMPORADAS        + "INTEGER,"
-            + COLUMN_QUANTCAPITULOSSERIE    + "INTEGER,)";
+            + COLUMN_NOMESERIE              + " TEXT,"
+            + COLUMN_DIRETORSERIE           + " TEXT,"
+            + COLUMN_DATALANCAMENTOSERIE    + " TEXT,"
+            + COLUMN_ATORPRINCIPALSERIE     + " TEXT,"
+            + COLUMN_ATRIZPRINCIPALSERIE    + " TEXT,"
+            + COLUMN_CLASSIFICACAOSERIE     + " INTEGER,"
+            + COLUMN_PRODUTORASERIE         + " TEXT,"
+            + COLUMN_IDGENERO               + " INTEGER,"
+            + COLUMN_QUANTTEMPORADAS        + " INTEGER,"
+            + COLUMN_QUANTCAPITULOSSERIE    + " INTEGER,"
+            + "FOREIGN KEY("+ COLUMN_IDGENERO +") REFERENCES " + Genero_model.TABLE + "(" +Genero_model.COLUMN_ID + "))";
 
-    private int id;
+    private int id, idGenero;
     private String nomeserie, diretorserie, atorprincipalserie, atrizprincipalserie, produtoraserie, generoserie;
     private Date datalancamentoserie;
     private Integer classificacaoserie,quanttemporadas, quantcapitulosserie;
@@ -64,14 +69,16 @@ public class Series_model {
     public String getProdutoraserie () { return produtoraserie ;}
     public void setProdutoraserie (String produtoraserie) {this.produtoraserie = produtoraserie;}
 
-    public String getGeneroserie () { return generoserie ;}
-    public void setGeneroserie (String generoserie) {this.generoserie = generoserie;}
+    public int getIdGenero() {
+        return idGenero;
+    }
+    public void setIdGenero(int idGenero) {
+        this.idGenero = idGenero;
+    }
 
     public Integer getQuanttemporadas () { return quanttemporadas ;}
-    public void set (Integer quanttemporadas) {this.quanttemporadas = quanttemporadas;}
+    public void setQuanttemporadas (Integer quanttemporadas) {this.quanttemporadas = quanttemporadas;}
 
     public Integer getQuantcapitulosserie () { return quantcapitulosserie;}
     public void setQuantcapitulosserie (Integer quantcapitulosserie) {this.quantcapitulosserie = quantcapitulosserie;}
-
 }
-

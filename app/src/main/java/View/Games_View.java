@@ -18,9 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import view.cadastro.GamesCadastro;
-import course.example.tools.Games_Controller;
+import com.example.patricia.cad.Games_Controller;
+import com.example.patricia.cad.R;
+
 import model.Games_model;
-import model.Livros_model;
 
 
 public class Games_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
@@ -86,7 +87,7 @@ public class Games_View extends Activity implements View.OnClickListener, Adapte
 
     }
 
-    public void alertDialog(final Livros_model livros_model){
+    public void alertDialog(final Games_model games_model){
 
         final CharSequence[] itens = {"editar","deletar"};
 

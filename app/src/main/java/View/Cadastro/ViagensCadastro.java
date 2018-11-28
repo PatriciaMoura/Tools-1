@@ -16,7 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Viagens_model;
-import course.example.tools.Viagens_Controller;
+
+import com.example.patricia.cad.R;
+import com.example.patricia.cad.Viagens_Controller;
 
 public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnClickListener, DialogInterface.OnDismissListener{
 
@@ -26,11 +28,11 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
 
     private AlertDialog dialog;
     private EditText editTextLocal, editTextDataIda, editTextDataVolta, editTextCIAAerea, editTextValor;
-    private EditText editTextParcelado, editTextHotel, editTextTranslado, editTextGuia, editTextVisto;
+    private EditText editTextHotel, editTextTranslado, editTextGuia, editTextVisto;
 
 
     private List<String> listaViagens = new ArrayList<String>();
-    List<View.Viagens_View> listViagens;
+    List<Viagens_View> listViagens;
 
 
     Context context;
@@ -55,11 +57,10 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
         editTextDataVolta = (EditText) view.findViewById(R.id.edtDataVolta);
         editTextCIAAerea = (EditText) view.findViewById(R.id.edtCIAAerea);
         editTextValor = (EditText) view.findViewById(R.id.edtValor);
-        editTextParcelado = (EditText) view.findViewById(R.id.edtParcelado);
         editTextHotel = (EditText) view.findViewById(R.id.edtHotel);
         editTextTranslado = (EditText) view.findViewById(R.id.edtTranslado);
         editTextGuia = (EditText) view.findViewById(R.id.edtGuia);
-        editTextVisto = (EditText) view.findViewById(R.id.edtQuantVisto);
+        editTextVisto = (EditText) view.findViewById(R.id.edtVisto);
 
 
         //CRIA OS BUTTONS DO ALERTDIALOG
@@ -82,7 +83,6 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
         editTextDataVolta.setText(DateUtil.dateToString(viagens_model.getDatavolta()));
         editTextCIAAerea.setText(viagens_model.getCiaaerea());
         editTextValor.setText(viagens_model.getValor());
-        editTextParcelado.setText(viagens_model.getParcelado());
         editTextHotel.setText(viagens_model.getHotel());
         editTextTranslado.setText(viagens_model.getTranslado());
         editTextGuia.setText(viagens_model.getVisto());
@@ -121,7 +121,6 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
         String viagensDatavolta= editTextDataVolta.getText().toString();
         String viagensCIAAerea = editTextCIAAerea.getText().toString();
         String viagensValor = editTextValor.getText().toString();
-        String viagensParcelado = editTextParcelado.getText().toString();
         String viagensHotel = editTextHotel.getText().toString();
         String viagensTranslado = editTextTranslado.getText().toString();
         String viagensGuia = editTextGuia.getText().toString();
@@ -138,8 +137,6 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
             editTextCIAAerea.setError("Digite a CIA Aérea!");
         if (viagensValor.length() == 0)
             editTextValor.setError("Digite o Valor!");
-        if (viagensParcelado.length() == 0)
-            editTextParcelado.setError("Digite a Quant. de Parcelas!");
         if (viagensHotel.length() == 0)
             editTextHotel.setError("Digite o Hotel!");
         if (viagensTranslado.length() == 0)
@@ -152,14 +149,14 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
         //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTÁ AÇÃO
         if (viagensLocal.length() != 0 && viagensDataIda.length() != 0 && viagensDatavolta.length() != 0
                 && viagensCIAAerea.length() != 0 && viagensValor.length() != 0
-                && viagensParcelado.length() != 0 && viagensHotel.length() != 0
+                && viagensHotel.length() != 0
                 && viagensTranslado.length() != 0 && viagensGuia.length() != 0
                 && viagensVisto.length() != 0) {
 
             if (viagens_model == null){
 
                 //CONVERTER PARA O TIPO DE DADOS QUE SERÁ ARMAZENADOS NO BANCO DE DADOS
-                int Parcela = Integer.parseInt(editTextParcelado.getText().toString());
+//                int Parcela = Integer.parseInt(editTextParcelado.getText().toString());
 
                 Viagens_model viagens_model = new Viagens_model();
                 viagens_model.setLocal(viagensLocal);
@@ -167,7 +164,6 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
                 viagens_model.setDatavolta(DateUtil.stringToDate(viagensDatavolta));
                 viagens_model.setCiaaerea(viagensCIAAerea);
                 viagens_model.setValor(viagensValor);
-                viagens_model.setParcelado(viagensParcelado);
                 viagens_model.setHotel(viagensHotel);
                 viagens_model.setTranslado(viagensTranslado);
                 viagens_model.setGuia(viagensGuia);
@@ -176,14 +172,13 @@ public class ViagensCadastro implements DialogInterface.OnShowListener, View.OnC
                 criadoComSucesso = viagensController.insert(viagens_model);
             }else{
                 //CONVERTER PARA O TIPO DE DADOS QUE SERÁ ARMAZENADOS NO BANCO DE DADOS
-                int Parcela = Integer.parseInt(editTextParcelado.getText().toString());
+//                int Parcela = Integer.parseInt(editTextParcelado.getText().toString());
 
                 viagens_model.setLocal(viagensLocal);
                 viagens_model.setDataida(DateUtil.stringToDate(viagensDataIda));
                 viagens_model.setDatavolta(DateUtil.stringToDate(viagensDatavolta));
                 viagens_model.setCiaaerea(viagensCIAAerea);
                 viagens_model.setValor(viagensValor);
-                viagens_model.setParcelado(viagensParcelado);
                 viagens_model.setHotel(viagensHotel);
                 viagens_model.setTranslado(viagensTranslado);
                 viagens_model.setGuia(viagensGuia);

@@ -1,5 +1,4 @@
-package course.example.tools;
-
+package com.example.patricia.cad;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,91 +6,64 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import view.DadosPessoais_View;
+import view.cadastro.DadosPessoaisCadastro;
 
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/ {
 
     Intent intent;
-    Button btnDadosPessoais, btnViagens, btnDispositivos, btnMusica, btnGames, btnLivros, btnFilmes, btnSeries;
+    Button btnEspecificacoes, btnCadastro, btnListar;
 
-
-    protected void onCreated (Bundle saveInstanceState){
-        super.onCreate(saveInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnDadosPessoais = (Button) findViewById(R.id.btnDadosPessoais);
-        btnDadosPessoais.setOnClickListener(this);
+        btnCadastro = (Button) findViewById(R.id.btnCadastro);
+        btnCadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListaCadastro.class);
+                startActivity(intent);
+            }
+        });
 
-        btnViagens = (Button) findViewById(R.id.btnIMC);
-        btnViagens.setOnClickListener(this);
 
-        btnDispositivos = (Button) findViewById(R.id.btnDispositivos);
-        btnDispositivos.setOnClickListener(this);
-
-        btnMusica = (Button) findViewById(R.id.btnCalculadora);
-        btnMusica.setOnClickListener(this);
-
-        btnGames = (Button) findViewById(R.id.btnCalcularMedia);
-        btnGames.setOnClickListener(this);
-
-        btnLivros = (Button) findViewById(R.id.btnCadastrarLivros);
-        btnLivros.setOnClickListener(this);
-
-        btnFilmes = (Button) findViewById(R.id.btnCadastrarFilmes);
-        btnFilmes.setOnClickListener(this);
-
-        btnSeries = (Button) findViewById(R.id.btnCadastrarSeries);
-        btnSeries.setOnClickListener(this);
+        btnEspecificacoes = (Button) findViewById(R.id.btnEspecificacoes);
+        btnEspecificacoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListaEspCadastro.class);
+                startActivity(intent);
+            }
+        });
+        /*btnCadastro.setOnClickListener(this);*/
+/*        btnCalculos = (Button) findViewById(R.id.btnCalculos);
+        btnCalculos.setOnClickListener(this);*/
     }
 
+    /*@Override
+    public void onClick(View view) {
 
+        switch (view.getId()){
 
-        @Override
-                public void onClick (View view){
+*//*            case R.id.btnCalculos:
+                intent = new Intent(MainActivity.this, ListaCalculos.class);
+                startActivity(intent);
+                break;*//*
 
-            switch (view.getId()){
+            case R.id.btnCadastro:
+                Intent intent = new Intent(MainActivity.this, ListaCadastro.class);
+                startActivity(intent);
+                break;
 
-                case R.id.btnDadosPessoais:
-                    intent = new Intent(MainActivity.this, DadosPessoais_Controller.class);
-                    startActivity(intent);
-                    break;
-
-                case R.id.btnViagens:
-                    intent = new Intent(MainActivity.this, Viagens_Controller.class);
-                    startActivity(intent);
-                    break;
-
-                case R.id.btnDispositivos:
-                    intent = new Intent(MainActivity.this, Dispositivos_Controller.class);
-                    startActivity(intent);
-                    break;
-
-                case R.id.btnMusica:
-                    intent = new Intent(MainActivity.this, Musica_Controller.class);
-                    startActivity(intent);
-                    break;
-
-                case R.id.btnGames:
-                    intent = new Intent(MainActivity.this, Games_Controller.class);
-                    startActivity(intent);
-                    break;
-
-                case R.id.btnLivros:
-                    intent = new Intent(MainActivity.this, Livro_Controller.class);
-                    startActivity(intent);
-
-                case R.id.btnFilmes:
-                    intent = new Intent( MainActivity.this,Filmes_Controller.class);
-                    startActivity(intent);
-
-                case R.id.btnSeries:
-                    intent = new Intent( MainActivity.this, Series_Controller.class);
-                    startActivity(intent);
-            }
+            default:
+                finish();
         }
+    }*/
 
-        @Override
-    protected void onDestroy () {super.onDestroy();
-}
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

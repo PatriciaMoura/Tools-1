@@ -1,5 +1,6 @@
 package view;
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -17,20 +19,21 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import view.cadastro.MusicaCadastro;
-import com.example.patricia.cad.Musica_Controller;
+import view.cadastro.DispositivosCadastro;
+import com.example.patricia.cad.Dispositivos_Controller;
 import com.example.patricia.cad.R;
 
-import model.Musica_model;
+import model.Dispositivos_model;
 
-public class Musica_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
+
+public class Dispositivos_View extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
 
     private ListView listView;
     private EditText editText;
     ArrayAdapter<String> adapter;
-    List<Musica_model> musicaList;
-    private List<String> musicaListNome = new ArrayList<String>();
-    private Musica_Controller musicaController;
+    List<Dispositivos_model> dispositivosList;
+    private List<String> dispositvosListNome = new ArrayList<String>();
+    private Dispositivos_Controller dispositivosController;
     private ImageView imageView;
 
     @Override
@@ -42,7 +45,7 @@ public class Musica_View extends Activity implements View.OnClickListener, Adapt
         editText = (EditText) findViewById(R.id.editTextPesquisar);
         imageView = (ImageView) findViewById(R.id.imgViewAdd);
 
-        musicaController = new Musica_Controller(this);
+        dispositivosController = new Dispositivos_Controller(this);
         listView.setOnItemClickListener(this);
 
         imageView.setOnClickListener(this);
@@ -56,7 +59,7 @@ public class Musica_View extends Activity implements View.OnClickListener, Adapt
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Musica_View.this.adapter.getFilter().filter(charSequence);
+                Dispositivos_View.this.adapter.getFilter().filter(charSequence);
             }
 
             @Override
@@ -69,24 +72,24 @@ public class Musica_View extends Activity implements View.OnClickListener, Adapt
     @Override
     public void onClick(View view) {
 
-        MusicaCadastro musicaCadastro  = new MusicaCadastro (this);
+        DispositivosCadastro dispositivosCadastro  = new DispositivosCadastro(this);
     }
 
     public void atualizarRegistros() {
 
-        musicaListNome.clear();
+        dispositvosListNome.clear();
 
-        musicaList = musicaController.getAll();
+        dispositivosList = dispositivosController.getAll();
 
-        for (Musica_model musica_model : musicaList)
-            musicaListNome.add(musica_model.getArtista() + " " + musica_model.getAlbum());
+        for (Dispositivos_model dispositivos_model : dispositivosList)
+            dispositvosListNome.add(dispositivos_model.getDispositivo() + " " + dispositivos_model.getMarca());
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, musicaListNome);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dispositvosListNome);
         listView.setAdapter(adapter);
 
     }
 
-    public void alertDialog(final Musica_model musica_model){
+    public void alertDialog(final Dispositivos_model dispositivos_model){
 
         final CharSequence[] itens = {"editar","deletar"};
 
@@ -98,19 +101,19 @@ public class Musica_View extends Activity implements View.OnClickListener, Adapt
                         if (item == 0){
                             //EDITAR
 
-                            MusicaCadastro musicaCadastro = new MusicaCadastro(Musica_View.this);
-                            musicaCadastro.loadMusica(musica_model);
+                            DispositivosCadastro dispositivosCadastro = new DispositivosCadastro(Dispositivos_View.this);
+                            dispositivosCadastro.loadDispositivos(dispositivos_model);
 
                         }else if (item == 1) {
                             //DELETAR
-                            boolean isDeletouComSucesso = musicaController.delete(musica_model.getId());
+                            boolean isDeletouComSucesso = dispositivosController.delete(dispositivos_model.getId());
 
                             if (isDeletouComSucesso){
-                                Toast.makeText(Musica_View.this, "Deletado.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Dispositivos_View.this, "Deletado.", Toast.LENGTH_SHORT).show();
                                 atualizarRegistros();
 
                             }else{
-                                Toast.makeText(Musica_View.this, "Erro ao deletar.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Dispositivos_View.this, "Erro ao deletar.", Toast.LENGTH_SHORT).show();
                             }
                         }
                         dialogInterface.dismiss();
@@ -123,10 +126,11 @@ public class Musica_View extends Activity implements View.OnClickListener, Adapt
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Musica_model musica_model = musicaList.get(i);
-        alertDialog(musica_model);
+        Dispositivos_model dispositivos_model = dispositivosList.get(i);
+        alertDialog(dispositivos_model);
 
     }
+
 
 
 }

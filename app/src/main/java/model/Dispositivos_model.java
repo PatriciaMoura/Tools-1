@@ -2,11 +2,14 @@ package model;
 
 import java.util.Date;
 
-public class Dispositivos_model {
+/**
+ * Created by Patricia on 23/11/2018.
+ */
 
+public class Dispositivos_model{
     //Nome tabela
 
-    public static final String TABLE = "Dispositivos";
+    public static final String TABLE = "dispositivos";
 
     //Nome colunas
 
@@ -24,18 +27,18 @@ public class Dispositivos_model {
 
     //Criando tabela
 
-    public static final String SQL_CREATE = "CREATE TABLE" + TABLE + "( "
+    public static final String SQL_CREATE = "CREATE TABLE " + TABLE + "( "
             + COLUMN_ID                     + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_DIPOSITIVO             + "TEXT,"
-            + COLUMN_MARCA                  + "TEXT,"
-            + COLUMN_DATALANCAMENTODISP     + "TEXT,"
-            + COLUMN_COR                    + "TEXT,"
-            + COLUMN_MEMORIA                + "INTEGER,"
-            + COLUMN_PIXELS                 + "INTEGER,"
-            + COLUMN_LOJA                   + "TEXT,"
-            + COLUMN_GARANTIA               + "TEXT,"
-            + COLUMN_DIVIDE                 + "INTEGER,"
-            + COLUMN_SOFTWARE               + "TEXT,)";
+            + COLUMN_DIPOSITIVO             + " TEXT,"
+            + COLUMN_MARCA                  + " TEXT,"
+            + COLUMN_DATALANCAMENTODISP     + " TEXT,"
+            + COLUMN_COR                    + " TEXT,"
+            + COLUMN_MEMORIA                + " INTEGER,"
+            + COLUMN_PIXELS                 + " INTEGER,"
+            + COLUMN_LOJA                   + " TEXT,"
+            + COLUMN_GARANTIA               + " TEXT,"
+            + COLUMN_DIVIDE                 + " INTEGER,"
+            + COLUMN_SOFTWARE               + " TEXT)";
 
     private int id, divide, memoria, pixels;
     private String dispositivo, marca, cor, lojacompra, garantia, software;
@@ -74,6 +77,5 @@ public class Dispositivos_model {
 
     public String getSoftware () {return software;}
     public void setSoftware (String software) {this.software = software;}
-
 
 }

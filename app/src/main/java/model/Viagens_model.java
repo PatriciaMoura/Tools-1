@@ -2,9 +2,13 @@ package model;
 
 import java.util.Date;
 
+/**
+ * Created by Patricia on 23/11/2018.
+ */
+
 public class Viagens_model {
 
-    public static final String TABLE = "Viagens";
+    public static final String TABLE = "viagens";
 
     //Nome colunas
 
@@ -14,7 +18,6 @@ public class Viagens_model {
     public static final String COLUMN_DATAVOLTA = "datavolta";
     public static final String COLUMN_CIAAEREA = "ciaaerea";
     public static final String COLUMN_VALOR = "valor";
-    public static final String COLUMN_PARCELADO = "parcelado";
     public static final String COLUMN_HOTEL = "hotel";
     public static final String COLUMN_TRANSLADO = "translado";
     public static final String COLUMN_GUIA = "guia";
@@ -22,23 +25,21 @@ public class Viagens_model {
 
     //Criando tabela
 
-    public static final String SQL_CREATE = "CREATE TABLE" + TABLE + "( "
+    public static final String SQL_CREATE = "CREATE TABLE " + TABLE + "( "
             + COLUMN_ID               + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_LOCAL            + "TEXT,"
-            + COLUMN_DATAIDA          + "TEXT,"
-            + COLUMN_DATAVOLTA        + "TEXT,"
-            + COLUMN_CIAAEREA         + "TEXT,"
-            + COLUMN_VALOR            + "TEXT"
-            + COLUMN_PARCELADO        + "INTEGER"
-            + COLUMN_HOTEL            + "TEXT"
-            + COLUMN_TRANSLADO        + "TEXT"
-            + COLUMN_GUIA             + "TEXT"
-            + COLUMN_VISTO            + "TEXT)";
+            + COLUMN_LOCAL            + " TEXT,"
+            + COLUMN_DATAIDA          + " TEXT,"
+            + COLUMN_DATAVOLTA        + " TEXT,"
+            + COLUMN_CIAAEREA         + " TEXT,"
+            + COLUMN_VALOR            + " TEXT,"
+            + COLUMN_HOTEL            + " TEXT,"
+            + COLUMN_TRANSLADO        + " TEXT,"
+            + COLUMN_GUIA             + " TEXT,"
+            + COLUMN_VISTO            + " TEXT)";
 
     private int id;
     private String local, ciaaerea, valor, hotel, translado, guia, visto;
     private Date dataida, datavolta;
-    private Integer parcelado;
 
     public int getId () { return id; }
     public void setId (int id) { this.id = id; }
@@ -58,11 +59,8 @@ public class Viagens_model {
     public String getValor () { return valor ;}
     public void setValor (String valor) {this.valor = valor;}
 
-    public Integer getParcelado () { return parcelado;}
-    public void setParcelado (Integer parcelado) {this.parcelado = parcelado;}
-
     public String getHotel () { return hotel;}
-    public void setHotel (String classificacaoserie) {this.hotel = hotel;}
+    public void setHotel (String hotel) {this.hotel = hotel;}
 
     public String getTranslado () { return translado ;}
     public void setTranslado (String translado) {this.translado = translado;}
@@ -72,7 +70,6 @@ public class Viagens_model {
 
     public String getVisto () { return visto ;}
     public void setVisto (String visto) {this.visto = visto;}
-
 
 
 }

@@ -1,7 +1,4 @@
-package course.example.tools;
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+package com.example.patricia.cad;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -57,7 +54,7 @@ public class Musica_Controller extends BaseController<Musica_model> {
         musica_model.setEstudio(c.getString(columnId));
 
         columnId = c.getColumnIndex(Musica_model.COLUMN_FAIXAFAVORITA);
-        musica_model.setFaixafavorita(c.getInt(columnId));
+        musica_model.setFaixafavorita(c.getString(columnId));
 
         columnId = c.getColumnIndex(Musica_model.COLUMN_PREMIO);
         musica_model.setPremio(c.getString(columnId));
@@ -100,3 +97,5 @@ public class Musica_Controller extends BaseController<Musica_model> {
     }
 
 }
+
+

@@ -1,5 +1,4 @@
-package course.example.tools;
-
+package com.example.patricia.cad;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -82,11 +81,11 @@ public class Livro_Controller extends BaseController <Livros_model> {
         values.put(Livros_model.COLUMN_DATALANCAMENTOLIVRO, DateUtil.dateToString(livros_model.getDatalancamentolivro()));
         values.put(Livros_model.COLUMN_EDITORA, livros_model.getEditora());
         values.put(Livros_model.COLUMN_EDICAO, livros_model.getEdicao());
-        values.put(Livros_model.COLUMN_PAISORIGEM, livros_model.getPaisorigem());
+        values.put(Livros_model.COLUMN_PAISORIGEM, livros_model .getPaisorigem());
         values.put(Livros_model.COLUMN_QUANTCAPITULOLIVRO, livros_model.getQuantcapitulolivro());
-        values.put(Livros_model.COLUMN_QUANTPAGINA, livros_model.getEditora());
-        values.put(Livros_model.COLUMN_GENEROLIVRO, livros_model.getEditora());
-        values.put(Livros_model.COLUMN_DATACOMPRA, livros_model.getEditora());
+        values.put(Livros_model.COLUMN_QUANTPAGINA, livros_model.getQuantpagina());
+        values.put(Livros_model.COLUMN_GENEROLIVRO, livros_model.getGenerolivro());
+        values.put(Livros_model.COLUMN_DATACOMPRA, DateUtil.dateToString(livros_model.getDatacompra()));
 
 
         return values;

@@ -2,9 +2,11 @@ package model;
 
 import java.util.Date;
 
+
+
 public class Games_model {
 
-    public static final String TABLE = "Games";
+    public static final String TABLE = "games";
 
     //Nome colunas
     public static final String COLUMN_ID = "_id";
@@ -21,18 +23,18 @@ public class Games_model {
 
     //Criando tabela
 
-    public static final String SQL_CREATE = "CREATE TABLE" + TABLE + "( "
+    public static final String SQL_CREATE = "CREATE TABLE " + TABLE + "( "
             + COLUMN_ID                      + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_NOMEGAMES               + "TEXT,"
-            + COLUMN_ABREVIACAO              + "TEXT,"
-            + COLUMN_DATALANCAMENTOGAMES     + "TEXT,"
-            + COLUMN_GENEROGAMES             + "TEXT,"
-            + COLUMN_MODOJOGO                + "TEXT,"
-            + COLUMN_PUBLICADORA             + "TEXT,"
-            + COLUMN_DESENVOLVEDORA          + "TEXT,"
-            + COLUMN_QUANTLANCADAGAMES       + "INTEGER,"
-            + COLUMN_PLATAFORMAS             + "TEXT,"
-            + COLUMN_MELHORFRANQUIA          + "TEXT,)";
+            + COLUMN_NOMEGAMES               + " TEXT,"
+            + COLUMN_ABREVIACAO              + " TEXT,"
+            + COLUMN_DATALANCAMENTOGAMES     + " TEXT,"
+            + COLUMN_GENEROGAMES             + " TEXT,"
+            + COLUMN_MODOJOGO                + " TEXT,"
+            + COLUMN_PUBLICADORA             + " TEXT,"
+            + COLUMN_DESENVOLVEDORA          + " TEXT,"
+            + COLUMN_QUANTLANCADAGAMES       + " INTEGER,"
+            + COLUMN_PLATAFORMAS             + " TEXT,"
+            + COLUMN_MELHORFRANQUIA          + " TEXT)";
 
     private int id;
     private String nomegames, abreviacao, generogames, modojogo, publicadora, desenvolvedora, plataformas, melhorfranquia;
