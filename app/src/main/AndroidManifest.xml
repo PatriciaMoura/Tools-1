@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="course.example.tools">
+    package="com.example.patricia.cad">
 
     <application
         android:allowBackup="true"
@@ -16,16 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SpeechToText" />
-        <activity android:name=".view.Filmes_View" />
-        <activity android:name=".view.Musica_View" />
-        <activity android:name=".view.Games_View" />
-        <activity android:name=".view.Livros_View" />
-        <activity android:name=".view.Series_View" />
-        <activity android:name=".view.Viagens_View" />
-        <activity android:name=".view.Dispositivos_View" />
-       <!-- <activity android:name=".Dispositivos_Controller" /> -->
+        <activity android:name="view.DadosPessoais_View"/>
+        <activity android:name=".ListaCadastro"/>
+        <activity android:name=".ListaEspCadastro"/>
+        <activity android:name="view.Dispositivos_View"/>
+        <activity android:name="view.Filmes_View"/>
+        <activity android:name="view.Games_View"/>
+        <activity android:name="view.Livros_View"/>
+        <activity android:name="view.Musica_View"/>
+        <activity android:name="view.Series_View"/>
+        <activity android:name="view.Viagens_View"/>
+        <activity android:name="view.Genero_View"/>
+        <activity android:name="view.TipoSangue_View"/>
     </application>
 
 </manifest>

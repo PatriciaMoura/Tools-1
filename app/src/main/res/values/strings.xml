@@ -1,10 +1,24 @@
 <resources>
-    <string name="app_name">Tools</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="Peso">Peso</string>
-    <string name="Altura">Altura</string>
-    <string name="Calcular_IMC">Calcular IMC</string>
-    <string name="title_activity_ficha__medica">Ficha_Medica</string>
+    <string name="app_name">CAD</string>
+    <string name="title_activity_filme">FilmeActivity</string>
+    <string-array name="cadastro">
+        <item>Dados Pessoais</item>
+        <item>Séries</item>
+        <item>Viagens</item>
+        <item>Dispositivos</item>
+        <item>Música</item>
+        <item>Filmes</item>
+        <item>Livros</item>
+        <item>Games</item>
+    </string-array>
 
+    <string-array name="chaves">
+        <item>Gênero</item>
+    </string-array>
+
+    <string-array name="chave2">
+        <item>Tipo Sanguíneo</item>
+    </string-array>
+
+    <string name="erro_intent">Ação Não Suportada</string>
 </resources>
