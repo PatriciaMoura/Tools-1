@@ -79,7 +79,7 @@ public class Musica_View extends Activity implements View.OnClickListener, Adapt
         musicaList = musicaController.getAll();
 
         for (Musica_model musica_model : musicaList)
-            musicaListNome.add(musica_model.getArtista() + " " + musica_model.getAlbum());
+            musicaListNome.add(musica_model.getArtista() + " - " + musica_model.getAlbum());
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, musicaListNome);
         listView.setAdapter(adapter);

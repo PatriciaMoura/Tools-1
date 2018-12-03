@@ -82,7 +82,7 @@ public class Dispositivos_View extends Activity implements View.OnClickListener,
         dispositivosList = dispositivosController.getAll();
 
         for (Dispositivos_model dispositivos_model : dispositivosList)
-            dispositvosListNome.add(dispositivos_model.getDispositivo() + " " + dispositivos_model.getMarca());
+            dispositvosListNome.add(dispositivos_model.getDispositivo() + " - Marca: " + dispositivos_model.getMarca());
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dispositvosListNome);
         listView.setAdapter(adapter);

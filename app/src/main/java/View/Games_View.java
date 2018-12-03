@@ -80,7 +80,7 @@ public class Games_View extends Activity implements View.OnClickListener, Adapte
         gamesList = gamesController.getAll();
 
         for (Games_model games_model : gamesList)
-            gamesListNome.add(games_model.getNomegames() + " " + games_model.getAbreviacao());
+            gamesListNome.add(games_model.getNomegames() + " - " + games_model.getAbreviacao());
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, gamesListNome);
         listView.setAdapter(adapter);

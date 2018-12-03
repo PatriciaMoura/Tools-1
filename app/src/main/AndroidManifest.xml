@@ -27,7 +27,7 @@
         <activity android:name="view.Series_View"/>
         <activity android:name="view.Viagens_View"/>
         <activity android:name="view.Genero_View"/>
-        <activity android:name="view.TipoSangue_View"/>
+
     </application>
 
 </manifest>

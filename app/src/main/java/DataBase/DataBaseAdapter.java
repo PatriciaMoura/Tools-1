@@ -30,6 +30,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
         db.execSQL(Filmes_model.SQL_CREATE);
         db.execSQL(Dispositivos_model.SQL_CREATE);
         db.execSQL(Genero_model.SQL_CREATE);
+
     }
 
     @Override

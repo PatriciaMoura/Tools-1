@@ -79,7 +79,7 @@ public class DadosPessoais_View extends Activity implements View.OnClickListener
         dadospessoaisList = dadosPessoaisController.getAll();
 
         for (DadosPessoais_model dadosPessoaisModel : dadospessoaisList)
-            dadospessoaisListNome.add(dadosPessoaisModel.getNome() + " " + dadosPessoaisModel.getRg() + " - CPF: " + dadosPessoaisModel.getCpf());
+            dadospessoaisListNome.add(dadosPessoaisModel.getNome()  + " - CPF: " + dadosPessoaisModel.getCpf());
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dadospessoaisListNome);
         listView.setAdapter(adapter);

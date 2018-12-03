@@ -82,7 +82,7 @@ public class Series_View extends Activity implements View.OnClickListener, Adapt
         seriesList = seriesController.getAll();
 
         for (Series_model series_model : seriesList)
-            seriesListNome.add(series_model.getNomeserie() + " " + series_model.getProdutoraserie());
+            seriesListNome.add(series_model.getNomeserie() + " - " + series_model.getProdutoraserie());
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, seriesListNome);
         listView.setAdapter(adapter);

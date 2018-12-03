@@ -80,7 +80,7 @@ public class Livros_View extends Activity implements View.OnClickListener, Adapt
         livrosList = livroController.getAll();
 
         for (Livros_model livros_model : livrosList)
-            livrosListNome.add(livros_model.getTitulo() + " " + livros_model.getAutor());
+            livrosListNome.add(livros_model.getTitulo() + " - " + livros_model.getAutor());
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, livrosListNome);
         listView.setAdapter(adapter);

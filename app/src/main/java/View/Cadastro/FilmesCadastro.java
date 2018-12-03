@@ -118,10 +118,10 @@ public class FilmesCadastro implements DialogInterface.OnShowListener, View.OnCl
 
     }
 
-    private int getIndexGeneroId(int idMedico) {
+    private int getIndexGeneroId(int idGenero) {
         for (int index = 0; index < listObjGenero.size(); index++){
-            Genero_model medico = listObjGenero.get(index);
-            if (idMedico == medico.getId())
+            Genero_model genero = listObjGenero.get(index);
+            if (idGenero == genero.getId())
                 return index;
         }
         return 0;

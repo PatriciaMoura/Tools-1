@@ -83,7 +83,7 @@ public class Viagens_View extends Activity implements View.OnClickListener, Adap
         viagensList = viagensController.getAll();
 
         for (Viagens_model viagens_model : viagensList)
-            viagensListNome.add(viagens_model.getLocal() + " " + viagens_model.getDataida());
+            viagensListNome.add(viagens_model.getLocal() + " " );
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, viagensListNome);
         listView.setAdapter(adapter);

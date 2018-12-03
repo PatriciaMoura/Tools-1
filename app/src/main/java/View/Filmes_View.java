@@ -80,7 +80,7 @@ public class Filmes_View extends Activity implements View.OnClickListener, Adapt
         filmesList = filmesController.getAll();
 
         for (Filmes_model filmes_model : filmesList)
-            filmesListNome.add(filmes_model.getNomefilme() + " " + filmes_model.getDiretorfilme());
+            filmesListNome.add(filmes_model.getNomefilme() + " - " + filmes_model.getDiretorfilme());
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, filmesListNome);
         listView.setAdapter(adapter);

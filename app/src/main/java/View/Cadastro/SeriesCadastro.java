@@ -113,10 +113,10 @@ public class SeriesCadastro implements DialogInterface.OnShowListener, View.OnCl
 
     }
 
-    private int getIndexGeneroId(int idMedico) {
+    private int getIndexGeneroId(int idSerie) {
         for (int index = 0; index < listObjGenero.size(); index++){
-            Genero_model medico = listObjGenero.get(index);
-            if (idMedico == medico.getId())
+            Genero_model serie = listObjGenero.get(index);
+            if (idSerie == serie.getId())
                 return index;
         }
         return 0;
