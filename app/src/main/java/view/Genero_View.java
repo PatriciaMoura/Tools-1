@@ -78,8 +78,8 @@ public class Genero_View extends Activity implements View.OnClickListener, Adapt
 
         generoList = generoController.getAll();
 
-        for (Genero_model filmes_model : generoList)
-            generoListNome.add(filmes_model.getNomegenero() + " " );
+        for (Genero_model genero_model : generoList)
+            generoListNome.add(genero_model.getNomegenero() + " " );
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, generoListNome);
         listView.setAdapter(adapter);

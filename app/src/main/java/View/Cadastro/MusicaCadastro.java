@@ -59,7 +59,7 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
         editTextProdutor = (EditText) view.findViewById(R.id.edtProdutorMusica);
         editTextEstudio = (EditText) view.findViewById(R.id.edtEstudio);
         editTextFaixaFavorita = (EditText) view.findViewById(R.id.edtFaixaFavorita);
-        editTextPremios = (EditText) view.findViewById(R.id.edtEstudio);
+        editTextPremios = (EditText) view.findViewById(R.id.edtPremio);
 
 
         //CRIA OS BUTTONS DO ALERTDIALOG
@@ -125,27 +125,6 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
         String musicaFaixaFavorita = editTextFaixaFavorita.getText().toString();
         String musicaPremios = editTextPremios.getText().toString();
 
-        //APRESENTA OS ERROS AO DEIXAR ALGUM ATRIBUTO EM BRANCO
-        if (musicaArtista.length() == 0)
-            editTextArtista.setError("Digite o Artista!");
-        if (musicaAlbum.length() == 0)
-            editTextAlbum.setError("Digite a Álbum!");
-        if (musicaGeneroMusical.length() == 0)
-            editTextGeneroMusical.setError("Digite o Gênero!");
-        if (musicaDataLancamentoMusica.length() == 0)
-            editTextDataLancamentoMusica.setError("Digite a Data de Lançamento!");
-        if (musicaQuantFaixas.length() == 0)
-            editTextQuantFaixas.setError("Digite a Quant. de Faixas!");
-        if (musicaGravadora.length() == 0)
-            editTextGravadora.setError("Digite a Gravadora!");
-        if (musicaProdutor.length() == 0)
-            editTextProdutor.setError("Digite o Produtor!");
-        if (musicaEstudio.length() == 0)
-            editTextEstudio.setError("Digite o Estúdio!");
-        if (musicaFaixaFavorita.length() == 0)
-            editTextFaixaFavorita.setError("Digite a Faixa Favorita!");
-        if (musicaPremios.length() == 0)
-            editTextPremios.setError("Digite os Prêmios!");
 
         //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTÁ AÇÃO
         if (musicaArtista.length() != 0 && musicaAlbum.length() != 0 && musicaGeneroMusical.length() != 0
@@ -157,7 +136,6 @@ public class MusicaCadastro implements DialogInterface.OnShowListener, View.OnCl
             if (musica_model == null){
 
                 //CONVERTER PARA O TIPO DE DADOS QUE SERÁ ARMAZENADOS NO BANCO DE DADOS
-                int QuantLancada = Integer.parseInt(editTextDataLancamentoMusica.getText().toString());
                 int QuantFaixas = Integer.parseInt(editTextQuantFaixas.getText().toString());
 
                 Musica_model musica_model = new Musica_model();

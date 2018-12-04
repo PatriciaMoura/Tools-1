@@ -84,7 +84,7 @@ public class GamesCadastro implements DialogInterface.OnShowListener, View.OnCli
         editTextModoJogo.setText(games_model.getModojogo());
         editTextPublicadora.setText(games_model.getPublicadora());
         editTextDesenvolvedora.setText(games_model.getDesenvolvedora());
-        editTextQuantLancada.setText(games_model.getQuantlancadaGames());
+        editTextQuantLancada.setText(String.valueOf(games_model.getQuantlancadaGames()));
         editTextPlataforma.setText(games_model.getPlataformas());
         editTextMelhorFranquia.setText(games_model.getMelhorfranquia());
 
@@ -107,7 +107,7 @@ public class GamesCadastro implements DialogInterface.OnShowListener, View.OnCli
             ((Games_View) context).atualizarRegistros();
         }
         else
-            Toast.makeText(context, "Não Foi Possivel Armazenar o Gaame.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Não Foi Possível Armazenar o Game.", Toast.LENGTH_SHORT).show();
 
         dialog.dismiss();
 
@@ -127,27 +127,7 @@ public class GamesCadastro implements DialogInterface.OnShowListener, View.OnCli
         String gamesPlataforma = editTextPlataforma.getText().toString();
         String gamesMelhorFranquia = editTextMelhorFranquia.getText().toString();
 
-        //APRESENTA OS ERROS AO DEIXAR ALGUM ATRIBUTO EM BRANCO
-        if (gamesNomeGame.length() == 0)
-            editTextNomeGame.setError("Digite o Nome!");
-        if (gamesAbreviacao.length() == 0)
-            editTextAbreviacao.setError("Digite a Abreviação!");
-        if (gamesGeneroGames.length() == 0)
-            editTextGeneroGames.setError("Digite o Gênero!");
-        if (gamesDataGames.length() == 0)
-            editTextDataGame.setError("Digite a Data de Lançamento!");
-        if (gamesModoJogo.length() == 0)
-            editTextModoJogo.setError("Digite o Modo de Jogo!");
-        if (gamesPublicadora.length() == 0)
-            editTextPublicadora.setError("Digite a Publicadora!");
-        if (gamesDesenvolvedora.length() == 0)
-            editTextDesenvolvedora.setError("Digite a Desenvolvedora!");
-        if (gamesQuantLancada.length() == 0)
-            editTextQuantLancada.setError("Digite a Quant. de Games Lançados!");
-        if (gamesPlataforma.length() == 0)
-            editTextPlataforma.setError("Digite a Plataforma!");
-        if (gamesMelhorFranquia.length() == 0)
-            editTextMelhorFranquia.setError("Digite a Franquia!");
+
 
         //SE TODOS OS CAMPOS FOREM PREENCHIDOS SERÁ EXECUTADA ESTÁ AÇÃO
         if (gamesNomeGame.length() != 0 && gamesAbreviacao.length() != 0 && gamesGeneroGames.length() != 0
